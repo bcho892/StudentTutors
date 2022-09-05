@@ -13,7 +13,8 @@ import { AboutComponent } from './pages/about/about.component';
 import { ProcesscardComponent } from './components/processcard/processcard.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { BookComponent } from './pages/book/book.component'
+import { BookComponent } from './pages/book/book.component';
+import { ArrowbuttonComponent } from './components/arrowbutton/arrowbutton.component'
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { BookComponent } from './pages/book/book.component'
     ProcesscardComponent,
     FooterComponent,
     ContactComponent,
-    BookComponent
+    BookComponent,
+    ArrowbuttonComponent
   ],
   imports: [
     BrowserModule,
