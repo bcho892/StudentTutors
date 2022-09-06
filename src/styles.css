@@ -33,6 +33,7 @@ p {
 }
 
 .contentcontainer {
+    position: relative;
     display: flex;
     flex-direction: column;
     padding: 80px 1rem;
@@ -83,4 +84,5 @@ p {
     .splitcontainer .section2 {
         padding: 0;
     }
+
 }
