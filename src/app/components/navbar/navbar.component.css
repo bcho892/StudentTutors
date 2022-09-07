@@ -7,6 +7,7 @@
     box-shadow: 1;
     z-index: 100;
     box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
+    overflow: hidden;
 
 }
 
@@ -16,6 +17,7 @@
     list-style: none;
     display: flex;
     gap: 2rem;
+    
 }
 
 .navitems a {
@@ -29,7 +31,16 @@
     margin-left: auto;
 }
 
-#logo {}
+#logo{
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+#logo img{
+    max-height: 120px;
+    max-width: 120px;
+}
 
 #menubtn {
     display: none;
