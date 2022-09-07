@@ -1,6 +1,6 @@
 <mat-toolbar class="container">
     <span id="logo">
-        <img src="/assets/logo.png" alt="">
+        <img src="./assets/logo.png" alt="">
     </span>
     <ul class="navitems" [ngClass]="opened ? '' : 'close' ">
         <li *ngFor="let link of links"><a routerLink="{{link.link}}">{{link.name}}</a></li>
