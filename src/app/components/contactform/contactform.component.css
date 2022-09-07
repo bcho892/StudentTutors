@@ -1,0 +1,16 @@
+mat-card{
+    display: flex;
+    flex-direction: column;
+}
+
+
+mat-card form{ 
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card textarea{
+    min-height: 10rem;
+}
+
+

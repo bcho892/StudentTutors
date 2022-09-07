@@ -1,0 +1,15 @@
+<mat-toolbar class="container">
+    <span id="logo">Student Tutors</span>
+    <ul class="navitems" [ngClass]="opened ? '' : 'close' ">
+        <li *ngFor="let link of links"><a routerLink="{{link.link}}">{{link.name}}</a></li>
+        <button mat-stroked-button id="bookbtn">Book Now</button>
+    </ul>
+    <button mat-icon-button (click)="toggleMenu()" *ngIf="!opened; else closebtn"><span class="material-icons"
+            id="menubtn">menu</span></button>
+    <ng-template #closebtn>
+        <button mat-icon-button (click)="toggleMenu()">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" id="menubtn" fontIcon="close"></mat-icon>
+        </button>
+    </ng-template>
+
+</mat-toolbar>

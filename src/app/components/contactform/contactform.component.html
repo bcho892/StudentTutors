@@ -1,0 +1,18 @@
+<mat-card>
+    <form action="">
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Name</mat-label>
+            <input matInput type="text">
+        </mat-form-field>
+        <mat-form-field  appearance="fill" color="accent" placeholder="love" required>
+            <mat-label>Email</mat-label>
+            <input matInput type="text">
+            <mat-error *ngIf="email.invalid">hate</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" color="accent" class="messagebox">
+            <mat-label>Message</mat-label>
+            <textarea matInput></textarea>
+        </mat-form-field>
+        <button mat-raised-button type="submit" color="accent">Send</button>
+    </form>
+</mat-card>
