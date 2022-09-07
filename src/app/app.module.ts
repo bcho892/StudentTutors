@@ -14,9 +14,11 @@ import { ProcesscardComponent } from './components/processcard/processcard.compo
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { BookComponent } from './pages/book/book.component';
-import { ArrowbuttonComponent } from './components/arrowbutton/arrowbutton.component'
-
-
+import { ArrowbuttonComponent } from './components/arrowbutton/arrowbutton.component';
+import { ContactformComponent } from './components/contactform/contactform.component'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,8 @@ import { ArrowbuttonComponent } from './components/arrowbutton/arrowbutton.compo
     FooterComponent,
     ContactComponent,
     BookComponent,
-    ArrowbuttonComponent
+    ArrowbuttonComponent,
+    ContactformComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,10 @@ import { ArrowbuttonComponent } from './components/arrowbutton/arrowbutton.compo
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
