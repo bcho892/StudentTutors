@@ -2,26 +2,35 @@
     position: fixed;
     top: 0;
     display: flex;
-    height: 80px;
+    height: 100px;
+    justify-content: center;
     background-color: white;
     box-shadow: 1;
     z-index: 100;
     box-shadow: 0 3px 5px -1px #0003, 0 6px 10px #00000024, 0 1px 18px #0000001f;
-    
+
+}
+
+.content {
+    position: relative;
+    width: 1100px;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
 }
 
 .navitems {
-    font-size:large;
+    font-size: large;
     font-weight: 300;
     list-style: none;
     display: flex;
     gap: 2rem;
-    
+
 }
 
 .navitems a {
     text-decoration: none;
-    color: rgb(33,33,33);
+    color: rgb(33, 33, 33);
 }
 
 .buttons {
@@ -30,14 +39,14 @@
     margin-left: auto;
 }
 
-#logo{
+#logo {
     width: 90px;
     height: 80px;
     margin-bottom: 20px;
     overflow: hidden;
 }
 
-#logo img{
+#logo img {
     max-height: 120px;
     max-width: 120px;
 }
@@ -56,9 +65,10 @@
 
 
 @media only screen and (max-width: 730px) {
-    .container{
-        justify-content:space-between;
+    .container {
+        justify-content: space-between;
     }
+
     .navitems {
         background-color: white;
         width: 100vw;
@@ -79,7 +89,8 @@
     }
 
     #menubtn {
-        margin-left: auto;
+        position: absolute;
+        right: 0;
         display: block;
         user-select: none;
         cursor: pointer;

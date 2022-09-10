@@ -1,17 +1,18 @@
-<div class="section grey">
+<div class="section">
     <div class="contentcontainer">
-        <h2>Student Tutors</h2>
         <div class="content">
-            <ul>
-                <li *ngFor="let link of links"><a href="{{link.link}}">{{link.name}}</a></li>
-            </ul>
+            <span class="socials">
+                <mat-icon id="fbicon">facebook</mat-icon>
+                <mat-icon id="emailicon">mail</mat-icon>
+            </span>
             <span class="bottom">
-                <p>Copyright Student Tutors 2022</p>
-                <h6>Terms and Conditions</h6>
-                <h6>Privacy Policy</h6>
-                <span class="socials">
-                    <mat-icon id="fbicon">facebook</mat-icon>
-                    <mat-icon id="emailicon">mail</mat-icon>
+                <ul>
+                    <li *ngFor="let link of links"><a href="{{link.link}}">{{link.name}}</a></li>
+                </ul>
+                <span class="details">
+                    <h6>Terms and Conditions</h6>
+                    <h6>Privacy Policy</h6>
+                    <p>Copyright Student Tutors 2022</p>
                 </span>
             </span>
         </div>
