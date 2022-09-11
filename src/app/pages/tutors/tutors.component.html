@@ -1,5 +1,15 @@
 <app-navbar></app-navbar>
 <div class="section blue">
-    <div class="contentcontainer"></div>
+    <div class="contentcontainer" id="header">
+        <h1>Meet our team</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga atque explicabo consequatur deserunt nesciunt
+            sapiente eos ex voluptates aspernatur natus!</p>
+    </div>
+</div>
+<div class="section grey">
+    <div class="contentcontainer" id="tutors">
+        <app-tutorcard *ngFor="let tutor of tutors" name="{{tutor.name}}" image="{{tutor.image}}"
+            description="{{tutor.description}}" [subjects]="tutor.subjects"> </app-tutorcard>
+    </div>
 </div>
 <app-footer></app-footer>

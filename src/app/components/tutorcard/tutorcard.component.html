@@ -1,0 +1,14 @@
+<mat-card>
+    <span class="top">
+        <img mat-card-avatar src="./assets/photo.png" alt="">
+        <div class="text">
+            <h1>{{name}}</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum repellendus odit corrupti atque,
+                nesciunt molestias?</p>
+            <span class="subjects">
+                <app-subjectbadge *ngFor="let subject of subjects" subject="{{subject.name}}" color="{{subject.color}}">
+                </app-subjectbadge>
+            </span>
+        </div>
+    </span>
+</mat-card>

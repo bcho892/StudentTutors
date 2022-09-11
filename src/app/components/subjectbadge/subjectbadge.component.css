@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    height:2rem;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    border-radius: 20%/50%;
+}
+
+p{
+    font-size: 1rem;
+    margin: 0;
+}

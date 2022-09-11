@@ -21,6 +21,9 @@ import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TutorsComponent } from './pages/tutors/tutors.component';
 import { ResourcesComponent } from './pages/resources/resources.component';
+import { ResourcecardComponent } from './components/resourcecard/resourcecard.component';
+import { TutorcardComponent } from './components/tutorcard/tutorcard.component';
+import { SubjectbadgeComponent } from './components/subjectbadge/subjectbadge.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +38,9 @@ import { ResourcesComponent } from './pages/resources/resources.component';
     ContactformComponent,
     TutorsComponent,
     ResourcesComponent,
+    ResourcecardComponent,
+    TutorcardComponent,
+    SubjectbadgeComponent,
   ],
   imports: [
     BrowserModule,
