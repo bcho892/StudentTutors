@@ -19,6 +19,8 @@ import { ContactformComponent } from './components/contactform/contactform.compo
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TutorsComponent } from './pages/tutors/tutors.component';
+import { ResourcesComponent } from './pages/resources/resources.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BookComponent,
     ArrowbuttonComponent,
     ContactformComponent,
+    TutorsComponent,
+    ResourcesComponent,
   ],
   imports: [
     BrowserModule,
