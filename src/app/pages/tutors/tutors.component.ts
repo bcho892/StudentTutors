@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Tutor } from 'src/app/types/util';
-
+import { SanityService } from 'src/app/service/sanity.service';
 @Component({
   selector: 'app-tutors',
   templateUrl: './tutors.component.html',
@@ -8,13 +8,17 @@ import { Tutor } from 'src/app/types/util';
 })
 export class TutorsComponent implements OnInit {
 
-  tutors: Tutor[] = [
-    { name: "Yaniel Yang", image: "test", description: "test", subjects: [{ name: "maths", color: "var(--black)" }] },
-    { name: "Yan Yuo", image: "test", description: "test", subjects: [{ name: "english", color: "var(--bluedark)" }, { name: "maths", color: "var(--black)" }] },
-    { name: "Test", image: "test", description: "test", subjects: [{ name: "maths", color: "var(--black)" }] }
-  ]
+  constructor(private sanityService: SanityService) { }
+
+  tutors: Tutor[] = [];
 
   ngOnInit(): void {
+    this.getTutors();
+  }
+
+  async getTutors(): Promise<Tutor[]> {
+    this.tutors = await this.sanityService.getTutors();
+    return this.tutors;
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SanityService } from 'src/app/service/sanity.service';
 import { Subject } from 'src/app/types/util';
 
 @Component({
@@ -7,11 +8,16 @@ import { Subject } from 'src/app/types/util';
   styleUrls: ['./tutorcard.component.css']
 })
 export class TutorcardComponent implements OnInit {
-  @Input() name!:string;
-  @Input() image!:string;
-  @Input() description!:string;
+  constructor(private sanityService: SanityService) { }
+
+  @Input() name!: string;
+  @Input() image!: string;
+  @Input() description!: string;
   @Input() subjects!: Subject[];
   ngOnInit(): void {
   }
 
+  imageUrl(source: any) {
+    return source ? this.sanityService.urlFor(source) : "";
+  }
 }

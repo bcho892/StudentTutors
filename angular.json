@@ -11,6 +11,9 @@
       "prefix": "app",
       "architect": {
         "build": {
+          "allowedCommonJsDependencies": [
+            "@sanity/client"
+          ],
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/student-tutors",
