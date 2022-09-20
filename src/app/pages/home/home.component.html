@@ -52,24 +52,20 @@
         <span class="processcards">
             <app-processcard *ngFor="let process of process" [process]="process"></app-processcard>
         </span>
-        <p>Want some changes to make this work for you? Feel free to contact us to discuss!</p>
+        <p>Want some changes to make this work for you? Feel free to <a href="/Contact">contact us</a> to discuss!</p>
     </div>
 </div>
-<div class="section blue">
-    <div class="contentcontainer" id="getstarted">
-        <div class="splitcontainer">
-            <div class="section1">
-                <img src="./assets/photo.png" alt="">
-            </div>
-            <div class="section2">
-                <h1>
-                    Lets get Started
-                </h1>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos quo quod magnam libero atque
-                    laboriosam. Quaerat tempora voluptate dicta accusamus?</p>
-                <app-arrowbutton [text]="'Get Started Now'" [blue]="true"></app-arrowbutton>
-            </div>
-        </div>
+<div class="section blue" id="getstarted">
+    <div id="goalsection"></div>
+    <div class="contentcontainer">
+
+        <h1>
+            Lets get Started
+        </h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos quo quod magnam libero atque
+            laboriosam. Quaerat tempora voluptate dicta accusamus?</p>
+        <app-arrowbutton [text]="'Get Started Now'" [blue]="true"></app-arrowbutton>
+
     </div>
 </div>
 <app-footer></app-footer>

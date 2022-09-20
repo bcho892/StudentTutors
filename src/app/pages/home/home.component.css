@@ -7,9 +7,14 @@
     position: relative;
     background-color: #618DFF;
 }
-
-
-
+#goalsection{
+    position: absolute;
+    filter:hue-rotate(202deg) brightness(0.75);
+    background-image: url("/assets/goalsbackground.jpg");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+}
 
 .landingimagecontainer {
     max-width: 50%;
@@ -37,10 +42,10 @@
 .landing h1 {
     position: relative;
     top: 35vh;
-    font-weight: 600;
+    font-weight: 700;
     text-align: center;
-    line-height: 7rem;
-    font-size: 7rem;
+    line-height: 8rem;
+    font-size: 8.5rem;
     color: white;
 }
 
@@ -72,19 +77,10 @@
     max-width: 50vw;
 }
 
-#getstarted .section1 {
-    overflow: hidden;
+
+#getstarted{
+    position: relative;
 }
-
-#getstarted .section2 {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-self: center;
-}
-
-
-
 .processcards {
     display: grid;
     row-gap: 1rem;
@@ -92,7 +88,7 @@
     grid-template-columns: 33% 33% 33%;
 }
 
-@media only screen and (max-width: 820px) {
+@media only screen and (max-width: 870px) {
     #aboutcard {
         bottom: 0;
         margin-bottom: 2rem;

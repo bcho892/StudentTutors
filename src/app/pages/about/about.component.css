@@ -1,5 +1,5 @@
 #maincard mat-card {
-    height: min-content;
+    padding-bottom: 0;
 }
 
 #maincard .section2 {
@@ -7,6 +7,8 @@
     flex-direction: column;
     justify-content: center;
 }
+
+
 
 #goals .section1 {
     z-index: 1;
@@ -18,17 +20,6 @@
     gap: 1rem;
 }
 
-#goals::before {
-    position: absolute;
-    content: "";
-    top: -5rem;
-    left: -5rem;
-    width: 40rem;
-    height: 40rem;
-    background-color: var(--bluedark);
-    border-radius: 50%;
-
-}
 
 #tonext .section2 {
     flex: 2;

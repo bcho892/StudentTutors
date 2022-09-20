@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
     --bluedark: #618DFF;
-    --black: rgb(33,33,33);
+    --black: rgb(33, 33, 33);
 }
 
 
@@ -43,7 +43,7 @@ p {
 
 }
 
-.contentcontainer h1{
+.contentcontainer h1 {
     line-height: 3rem;
 }
 
@@ -58,7 +58,7 @@ p {
     line-height: 1.7rem;
 }
 
-#header{
+#header {
     margin-top: 100px;
 }
 
@@ -78,7 +78,9 @@ p {
     flex: 1;
 }
 
-
+a {
+    color: var(--bluedark);
+}
 
 @media only screen and (max-width: 820px) {
 

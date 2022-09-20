@@ -11,10 +11,12 @@
 }
 
 .blue {
+    background: none;
     width: 70%;
     border-color: white;
 }
 
 .grey {
+    background: none;
     width: 70%;
 }
