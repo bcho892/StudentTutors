@@ -19,7 +19,6 @@ export class SanityService {
   urlFor = (source: any) =>
     ImageUrlBuilder(this.sanityClientCredidentials.option).image(source)
 
-
   async getTutors(): Promise<Tutor[]> {
     return await this.sanityClientCredidentials.option.fetch(
       `*[_type == "tutor"]{
@@ -31,4 +30,5 @@ export class SanityService {
       }`
     );
   }
+
 }
