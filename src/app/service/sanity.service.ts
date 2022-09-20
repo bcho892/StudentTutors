@@ -34,9 +34,7 @@ export class SanityService {
 
   async getHomepage(): Promise<Homepage[]> {
     return await this.sanityClientCredidentials.option.fetch(
-      `*[_type == "pages"]{
-        homepage
-      }`
+      `*[_type == "pages"]`
     );
   }
 
