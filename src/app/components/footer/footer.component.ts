@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FacebookService, InitParams } from 'ngx-facebook';
 import { LinkItem } from 'src/app/types/util';
 
 @Component({
@@ -12,16 +11,12 @@ export class FooterComponent implements OnInit {
   { name: "About", link: "/About" }, {
     name: "Contact", link: "/Contact"
   }, { name: "Book", link: "/Book" }]
-  constructor(private facebookService: FacebookService) {
+  constructor() {
 
   }
 
   ngOnInit(): void {
-    this.initFacebookService();
   }
-  private initFacebookService(): void {
-    const initParams: InitParams = { xfbml: true, version: 'v15.0' };
-    this.facebookService.init(initParams);
-  }
+
 
 }
