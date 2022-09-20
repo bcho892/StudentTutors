@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import SanityClient from '@sanity/client';
 import ImageUrlBuilder from '@sanity/image-url';
 import { environment } from 'src/environments/environment';
+import { Homepage } from '../types/schemas';
 import { Tutor } from '../types/util';
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,14 @@ export class SanityService {
         "image": image.asset -> url,
         description,
         subjects
+      }`
+    );
+  }
+
+  async getHomepage(): Promise<Homepage[]> {
+    return await this.sanityClientCredidentials.option.fetch(
+      `*[_type == "pages"]{
+        homepage
       }`
     );
   }

@@ -12,7 +12,6 @@ export class FooterComponent implements OnInit {
     name: "Contact", link: "/Contact"
   }, { name: "Book", link: "/Book" }]
   constructor() {
-
   }
 
   ngOnInit(): void {
