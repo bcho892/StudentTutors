@@ -20,7 +20,7 @@ export class FooterComponent implements OnInit {
     this.initFacebookService();
   }
   private initFacebookService(): void {
-    const initParams: InitParams = { xfbml: true, version: 'v3.2' };
+    const initParams: InitParams = { xfbml: true, version: 'v15.0' };
     this.facebookService.init(initParams);
   }
 
