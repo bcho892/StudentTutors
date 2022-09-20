@@ -25,6 +25,7 @@ import { ResourcesComponent } from './pages/resources/resources.component';
 import { ResourcecardComponent } from './components/resourcecard/resourcecard.component';
 import { TutorcardComponent } from './components/tutorcard/tutorcard.component';
 import { SubjectbadgeComponent } from './components/subjectbadge/subjectbadge.component';
+import { PagesService } from './service/pages.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,9 @@ import { SubjectbadgeComponent } from './components/subjectbadge/subjectbadge.co
     ReactiveFormsModule,
     FacebookModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    PagesService,
+  ],
   bootstrap: [AppComponent]
 })
 

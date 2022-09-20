@@ -1,5 +1,10 @@
 import { ProcessStep } from "./util"
 
+export type Pages = {
+    homepage: Homepage,
+    aboutpage: Aboutpage,
+}
+
 export type Homepage = {
     landingtext: string,
     sectionone: {
@@ -24,13 +29,25 @@ export type Homepage = {
         }
     },
     sectionthree: {
-        steps: ProcessStep[];
+        steps: ProcessStep[],
     },
     sectionlast: {
         content: {
             heading: string,
             body: string,
         }
+    }
+
+}
+
+export type Aboutpage = {
+    abouttext: string,
+    goalsdescription: string,
+    sectionpromoter: {
+        heading: string,
+        body: string,
+        name: string,
+        credidentials: string,
     }
 
 }
