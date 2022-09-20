@@ -18,6 +18,7 @@ import { ArrowbuttonComponent } from './components/arrowbutton/arrowbutton.compo
 import { ContactformComponent } from './components/contactform/contactform.component'
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FacebookModule } from 'ngx-facebook';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TutorsComponent } from './pages/tutors/tutors.component';
 import { ResourcesComponent } from './pages/resources/resources.component';
@@ -52,7 +53,8 @@ import { SubjectbadgeComponent } from './components/subjectbadge/subjectbadge.co
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FacebookModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
