@@ -8,15 +8,15 @@ import { ProcessStep } from '../../types/util';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  homepage!: any;
+  content!: Homepage;
   process: ProcessStep[] = [
     { step: 1, name: "Choose a Subject", description: "" },
     { step: 2, name: "Find a Tutor", description: "" },
     { step: 3, name: "Make a Booking", description: "" }]
 
   constructor(private pageService: PagesService) {
-    this.homepage = this.pageService.getHomepage();
-    console.log(this.homepage);
+    this.content = this.pageService.getHomepage();
+    console.log(this.content);
   }
   ngOnInit(): void {
 

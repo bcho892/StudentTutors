@@ -68,6 +68,10 @@
     gap: 2rem;
 }
 
+#goal .section1 mat-card{
+    padding-bottom: 0;
+}
+
 #getstarted h1 {
     font-size: 7rem;
     line-height: 7rem;
