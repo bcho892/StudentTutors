@@ -51,3 +51,8 @@ export type Aboutpage = {
     }
 
 }
+
+export type Goal = {
+    name: string,
+    description: string;
+}
