@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import SanityClient from '@sanity/client';
 import ImageUrlBuilder from '@sanity/image-url';
 import { environment } from 'src/environments/environment';
-import { Goal, Homepage, Pages } from '../types/schemas';
+import { Goal, Pages, Resource } from '../types/schemas';
 import { Tutor } from '../types/util';
 @Injectable({
   providedIn: 'root'
@@ -14,7 +14,9 @@ export class SanityService {
   sanityClientCredidentials = {
     option: SanityClient({
       projectId: environment.project_id,
-      dataset: "production"
+      dataset: "production",
+      apiVersion: "2022-09-21",
+      useCdn: true,
     })
   };
   urlFor = (source: any) =>
@@ -36,6 +38,12 @@ export class SanityService {
     return await this.sanityClientCredidentials.option.fetch(
       `*[_type == "pages"]`
     );
+  }
+
+  async getResources(): Promise<Resource[]> {
+    return await this.sanityClientCredidentials.option.fetch(
+      `*[_type == "resource"]`
+    )
   }
 
   async getGoals(): Promise<Goal[]> {

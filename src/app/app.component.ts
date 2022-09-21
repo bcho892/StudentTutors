@@ -13,7 +13,7 @@ export class AppComponent {
   loaded: boolean = false;
   title = 'StudentTutors';
   homepage!: Homepage[];
-  constructor(private pageService: PagesService, private facebookService: FacebookService) {
+  constructor(private facebookService: FacebookService, private pageService: PagesService) {
     this.initFacebookService();
     this.loadPages();
   }

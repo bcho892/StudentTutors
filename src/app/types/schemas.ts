@@ -3,6 +3,7 @@ import { ProcessStep } from "./util"
 export type Pages = {
     homepage: Homepage,
     aboutpage: Aboutpage,
+    contactpage: Contactpage
 }
 
 export type Homepage = {
@@ -52,7 +53,24 @@ export type Aboutpage = {
 
 }
 
+export type Contactpage = {
+    sectionone: {
+        heading: string,
+        body: string,
+    },
+    sectiontwo: {
+        heading: string,
+        body: string
+    }
+}
+
 export type Goal = {
     name: string,
     description: string;
+}
+
+export type Resource = {
+    name: string,
+    description: string,
+    link: string
 }

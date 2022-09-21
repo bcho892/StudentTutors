@@ -7,9 +7,10 @@
     position: relative;
     background-color: #618DFF;
 }
-#goalsection{
+
+#goalsection {
     position: absolute;
-    filter:hue-rotate(202deg) brightness(0.75);
+    filter: hue-rotate(202deg) brightness(0.75);
     background-image: url("/assets/goalsbackground.jpg");
     height: 100%;
     width: 100%;
@@ -33,6 +34,10 @@
 
 #intro {
     padding-bottom: 0;
+}
+
+#intro .splitcontainer {
+    margin-top: 0;
 }
 
 .landingimagecontainer {
@@ -68,7 +73,7 @@
     gap: 2rem;
 }
 
-#goal .section1 mat-card{
+#goal .section1 mat-card {
     padding-bottom: 0;
 }
 
@@ -82,9 +87,10 @@
 }
 
 
-#getstarted{
+#getstarted {
     position: relative;
 }
+
 .processcards {
     display: grid;
     row-gap: 1rem;
@@ -93,6 +99,8 @@
 }
 
 @media only screen and (max-width: 870px) {
+
+
     #aboutcard {
         bottom: 0;
         margin-bottom: 2rem;
@@ -119,5 +127,12 @@
     #getstarted img {
         padding: 0;
         max-width: 90vw;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .landing h1 {
+        font-size: 3rem;
+        line-height: 3rem;
     }
 }

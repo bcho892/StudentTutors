@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PagesService } from 'src/app/service/pages.service';
+import { Contactpage } from 'src/app/types/schemas';
 
 @Component({
   selector: 'app-contact',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-
-  constructor() { }
+  content!: Contactpage;
+  constructor(private pageService: PagesService) {
+    this.content = this.pageService.getContactpage();
+  }
 
   ngOnInit(): void {
   }

@@ -86,10 +86,12 @@ a {
 
     .contentcontainer h1 {
         line-height: 3rem;
+        text-align: center;
     }
 
     .splitcontainer {
         flex-direction: column;
+        text-align: center;
     }
 
     .splitcontainer .section2 {
