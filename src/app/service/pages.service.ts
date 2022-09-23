@@ -28,7 +28,11 @@ export class PagesService {
     return this.loaded;
   }
 
-  public getStatus() {
+  public buildImageUrl(source: any) {
+    return this.sanityService.urlFor(source);
+  }
+
+  public getStatus(): boolean {
     return this.loaded;
   }
 

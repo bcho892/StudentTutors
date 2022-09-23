@@ -16,7 +16,7 @@
             </div>
             <div class="section2">
                 <mat-card id="aboutcard">
-                    <mat-card-title>10 Subjects</mat-card-title>
+                    <mat-card-title>{{content.sectionone.secondhalf.heading}}</mat-card-title>
                     <mat-card-subtitle>At the highest level</mat-card-subtitle>
                 </mat-card>
             </div>
@@ -30,7 +30,7 @@
             <div class="splitcontainer">
                 <div class="section1">
                     <mat-card id="goalcard">
-                        <img mat-card-image src="./assets/photo.png">
+                        <img mat-card-image src="{{getUrl(content.sectiontwo.firsthalf.image.asset._ref)}}">
                     </mat-card>
                 </div>
                 <div class="section2">

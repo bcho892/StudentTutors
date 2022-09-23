@@ -18,6 +18,10 @@ export class HomeComponent implements OnInit {
     this.content = this.pageService.getHomepage();
     console.log(this.content);
   }
+  public getUrl(source: any) {
+    return this.pageService.buildImageUrl(source);
+  }
+
   ngOnInit(): void {
 
   }
