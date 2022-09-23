@@ -2,7 +2,7 @@
 
     <div class="content">
         <span id="logo">
-            <img src="./assets/logo.png" alt="">
+            <img src="./assets/logo.svg" alt="">
         </span>
         <ul class="navitems" [ngClass]="opened ? '' : 'close' ">
             <li *ngFor="let link of links"><a routerLink="{{link.link}}">{{link.name}}</a></li>
