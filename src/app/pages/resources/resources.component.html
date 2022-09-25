@@ -8,7 +8,7 @@
 <div class="section grey">
     <div class="contentcontainer">
         <div class="cardcontainer">
-            <app-resourcecard *ngFor="let resource of resources" title="{{resource.title}}" image="{{resource.image}}"
+            <app-resourcecard *ngFor="let resource of resources" name="{{resource.name}}" 
                 description="{{resource.description}}" link="{{resource.link}}"></app-resourcecard>
         </div>
     </div>

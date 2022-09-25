@@ -7,8 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ResourcecardComponent implements OnInit {
 
-  @Input() title!:string;
-  @Input() image!:string;
+  @Input() name!:string;
   @Input() description!:string;
   @Input() link!:string;
 

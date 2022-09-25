@@ -1,7 +1,10 @@
 mat-card-header .mat-card-header-text{
     margin: 0;
 }
-
+a {
+    color: white;
+    text-decoration: none;
+}
 
 
 .imgcontainer{
