@@ -64,6 +64,10 @@
     right: 2rem;
 }
 
+#bookbtn a {
+    color: white;
+}
+
 @media only screen and (max-width: 830px) {
     .container {
         justify-content: space-between;
