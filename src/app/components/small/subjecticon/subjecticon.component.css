@@ -1,0 +1,25 @@
+.container {
+    position: relative;
+    border-radius: 5px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container p {
+    color: white;
+    position: relative;
+    margin: 0.5rem 0;
+    font-weight: 500;
+    z-index:2;
+}
+
+#bgimage{
+    filter: brightness(0.5);
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+}

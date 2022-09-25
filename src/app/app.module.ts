@@ -26,6 +26,7 @@ import { ResourcecardComponent } from './components/resourcecard/resourcecard.co
 import { TutorcardComponent } from './components/tutorcard/tutorcard.component';
 import { SubjectbadgeComponent } from './components/subjectbadge/subjectbadge.component';
 import { PagesService } from './service/pages.service';
+import { SubjecticonComponent } from './components/small/subjecticon/subjecticon.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { PagesService } from './service/pages.service';
     ResourcecardComponent,
     TutorcardComponent,
     SubjectbadgeComponent,
+    SubjecticonComponent,
   ],
   imports: [
     BrowserModule,
