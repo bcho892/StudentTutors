@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contactform',
@@ -7,9 +7,54 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./contactform.component.css']
 })
 export class ContactformComponent implements OnInit {
-  email = new FormControl('', [Validators.required, Validators.email]);
+  submitted: boolean = false;
 
-  constructor() { }
+  contactForm = this.formBuilder.group({
+    name: new FormControl('', [
+      Validators.required
+    ]),
+    email: new FormControl('', [
+      Validators.email,
+      Validators.required
+    ]),
+    message: new FormControl('', [
+      Validators.required,
+      Validators.minLength(10)
+    ])
+  })
+
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
+
+  async onSubmit(): Promise<void> {
+    if (!this.contactForm.valid) return;
+    const data = new FormData()
+    data.append("name", this.contactForm.value.name!)
+    data.append("email", this.contactForm.value.email!)
+    data.append("message", this.contactForm.value.message!)
+    try {
+      const submitResponse = await fetch('https://formspree.io/f/mqkjqbyw',
+        {
+          method: 'POST',
+          body: data,
+          headers: {
+            'Accept': 'application/json'
+          }
+        }
+      )
+      if (submitResponse.ok) {
+        this.submitted = true;
+      } else {
+        this.submitted = false;
+      }
+    } catch {
+      this.submitted = false;
+    }
+
+
+  }
+
 
   ngOnInit(): void {
   }
