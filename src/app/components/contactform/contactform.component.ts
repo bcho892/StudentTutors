@@ -11,21 +11,29 @@ export class ContactformComponent implements OnInit {
 
   contactForm = this.formBuilder.group({
     name: new FormControl('', [
-      Validators.required
+      Validators.required,
+      Validators.minLength(1),
+      Validators.maxLength(50),
     ]),
     email: new FormControl('', [
       Validators.email,
-      Validators.required
+      Validators.required,
+      Validators.maxLength(35),
     ]),
     message: new FormControl('', [
       Validators.required,
-      Validators.minLength(10)
+      Validators.minLength(10),
+      Validators.maxLength(250),
     ])
   })
 
   constructor(
     private formBuilder: FormBuilder
   ) { }
+
+  newSubmission(): void {
+    this.submitted = false;
+  }
 
   async onSubmit(): Promise<void> {
     if (!this.contactForm.valid) return;
@@ -47,12 +55,12 @@ export class ContactformComponent implements OnInit {
         this.submitted = true;
       } else {
         this.submitted = false;
+        console.warn("Something went wrong");
       }
     } catch {
       this.submitted = false;
+      console.warn("An error was caught in the operation");
     }
-
-
   }
 
 

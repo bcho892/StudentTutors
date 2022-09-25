@@ -1,5 +1,5 @@
 <mat-card>
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!submitted else sent">
         <mat-form-field appearance="fill" color="accent">
             <mat-label>Name</mat-label>
             <input matInput name="name" formControlName="name" type="text">
@@ -14,4 +14,13 @@
         </mat-form-field>
         <button mat-raised-button type="submit" color="accent">Send</button>
     </form>
+    <ng-template #sent>
+        <div id="sentmessage">
+            <span class="material-icons" id="checkicon">
+                check_circle
+            </span>
+            <p><span id="thanksmessage">Thanks for your message!</span> <br /> We will be in touch.</p>
+            <button mat-raised-button color="accent" (click)="submitted = false">Send Another</button>
+        </div>
+    </ng-template>
 </mat-card>
