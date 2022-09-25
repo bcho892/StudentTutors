@@ -52,6 +52,7 @@ export class ContactformComponent implements OnInit {
         }
       )
       if (submitResponse.ok) {
+        this.contactForm.reset();
         this.submitted = true;
       } else {
         this.submitted = false;
