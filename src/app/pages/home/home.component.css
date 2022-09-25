@@ -27,7 +27,7 @@
 .landing img {
     position: absolute;
     width: 100%;
-    filter: hue-rotate(202deg) brightness(0.75);
+    filter: hue-rotate(202deg) brightness(0.65);
     height: 100%;
     object-fit: cover;
 }
@@ -45,9 +45,12 @@
 }
 
 .landing h1 {
+    font-family: 'Quicksand';
+    margin: auto;
+    max-width: 850px;
     position: relative;
     top: 35vh;
-    font-weight: 700;
+    font-weight: 900;
     text-align: center;
     line-height: 8rem;
     font-size: 8.5rem;
@@ -98,7 +101,7 @@
     grid-template-columns: 33% 33% 33%;
 }
 
-@media only screen and (max-width: 870px) {
+@media only screen and (max-width: 850px) {
 
 
     #aboutcard {
@@ -107,8 +110,8 @@
     }
 
     .landing h1 {
-        font-size: 4rem;
-        line-height: 5rem;
+        font-size: 6rem;
+        line-height: 6rem;
     }
 
     .processcards {
@@ -130,7 +133,14 @@
     }
 }
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 540px) {
+    .landing h1 {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+}
+
+@media only screen and (max-width: 410px) {
     .landing h1 {
         font-size: 3rem;
         line-height: 3rem;
