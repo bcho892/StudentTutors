@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   constructor(private pageService: PagesService) {
     this.content = this.pageService.getHomepage();
     this.subjects = this.pageService.getSubjects();
-    console.log(this.subjects);
+    //console.log(this.subjects);
   }
   public getUrl(source: Image) {
     return source ? this.pageService.buildImageUrl(source.asset._ref) : "./assets/photo.png";
