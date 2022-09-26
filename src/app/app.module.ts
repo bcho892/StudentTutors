@@ -27,8 +27,6 @@ import { TutorcardComponent } from './components/tutorcard/tutorcard.component';
 import { SubjectbadgeComponent } from './components/subjectbadge/subjectbadge.component';
 import { PagesService } from './service/pages.service';
 import { SubjecticonComponent } from './components/small/subjecticon/subjecticon.component';
-import { NgxGoogleAnalyticsModule, NgxGoogleAnalyticsRouterModule } from 'ngx-google-analytics';
-import { environment } from 'src/environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,8 +57,6 @@ import { environment } from 'src/environments/environment';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    NgxGoogleAnalyticsModule.forRoot(environment.measurement_id),
-    NgxGoogleAnalyticsRouterModule,
     FacebookModule.forRoot()
   ],
   providers: [

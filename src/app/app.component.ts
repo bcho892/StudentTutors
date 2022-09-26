@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 import { FacebookService, InitParams } from 'ngx-facebook';
 import { PagesService } from './service/pages.service';
-import { SanityService } from './service/sanity.service';
+import { NavigationEnd, Router } from '@angular/router';
 import { Homepage } from './types/schemas';
+import { environment } from 'src/environments/environment';
+
+declare const gtag: Function;
 
 @Component({
   selector: 'app-root',
@@ -13,7 +16,12 @@ export class AppComponent {
   loaded: boolean = false;
   title = 'StudentTutors';
   homepage!: Homepage[];
-  constructor(private facebookService: FacebookService, private pageService: PagesService) {
+  constructor(private facebookService: FacebookService, private pageService: PagesService, public router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        gtag('config', environment.measurement_id, { 'page_path': event.urlAfterRedirects });
+      }
+    })
     this.initFacebookService();
     this.loadPages();
   }
