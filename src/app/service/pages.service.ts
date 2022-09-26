@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Aboutpage, Contactpage, Goal, Homepage, Pages, Resource } from '../types/schemas';
+import { Aboutpage, Contactpage, DisplaySubject, Goal, Homepage, Pages, Resource } from '../types/schemas';
 import { Tutor } from '../types/util';
 import { SanityService } from './sanity.service';
 
@@ -15,6 +15,8 @@ export class PagesService {
   private tutors!: Tutor[];
   private goals!: Goal[];
   private resources!: Resource[];
+  private subjects!: DisplaySubject[];
+
   constructor(private sanityService: SanityService) {
     this.getPages();
   }
@@ -22,6 +24,7 @@ export class PagesService {
     this.pages = await this.sanityService.getPages();
     this.tutors = await this.sanityService.getTutors();
     this.goals = await this.sanityService.getGoals();
+    this.subjects = await this.sanityService.getSubjects();
     this.resources = await this.sanityService.getResources();
     this.homepage = this.pages[0].homepage;
     this.aboutpage = this.pages[0].aboutpage;
@@ -62,4 +65,7 @@ export class PagesService {
     return this.resources;
   }
 
+  public getSubjects(): DisplaySubject[] {
+    return this.subjects;
+  }
 }

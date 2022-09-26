@@ -22,11 +22,7 @@ export type Homepage = {
     sectiontwo: {
         heading: string,
         firsthalf: {
-            image: {
-                asset: {
-                    _ref: string;
-                }
-            },
+            image: Image,
         },
         secondhalf: {
             title: string,
@@ -77,4 +73,15 @@ export type Resource = {
     name: string,
     description: string,
     link: string
+}
+
+export type Image = {
+    asset: {
+        _ref: string;
+    }
+}
+
+export type DisplaySubject = {
+    name: string,
+    image: Image,
 }

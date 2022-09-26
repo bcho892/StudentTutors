@@ -20,7 +20,8 @@
                     <mat-card-subtitle>At the highest level</mat-card-subtitle>
                     <mat-card-content>
                         <div id="subjectgrid">
-                            <app-subjecticon></app-subjecticon>
+                            <app-subjecticon *ngFor="let subject of subjects" name="{{subject.name}}"
+                                image="{{getUrl(subject.image)}}"></app-subjecticon>
                         </div>
                     </mat-card-content>
                 </mat-card>
@@ -35,7 +36,7 @@
             <div class="splitcontainer">
                 <div class="section1">
                     <mat-card id="goalcard">
-                        <img mat-card-image src="{{getUrl(content.sectiontwo.firsthalf.image.asset._ref)}}">
+                        <img mat-card-image src="{{getUrl(content.sectiontwo.firsthalf.image)}}">
                     </mat-card>
                 </div>
                 <div class="section2">

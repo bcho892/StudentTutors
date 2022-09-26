@@ -8,8 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SubjecticonComponent implements OnInit {
 
   @Input() name!: string;
+  @Input() image!: string;
   constructor() { }
 
+  
   ngOnInit(): void {
   }
 

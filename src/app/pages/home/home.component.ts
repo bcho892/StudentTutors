@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PagesService } from 'src/app/service/pages.service';
-import { Homepage } from 'src/app/types/schemas';
+import { DisplaySubject, Homepage, Image } from 'src/app/types/schemas';
 import { ProcessStep } from '../../types/util';
 @Component({
   selector: 'app-home',
@@ -9,6 +9,7 @@ import { ProcessStep } from '../../types/util';
 })
 export class HomeComponent implements OnInit {
   content!: Homepage;
+  subjects!: DisplaySubject[];
   process: ProcessStep[] = [
     { step: 1, name: "Choose a Subject", description: "" },
     { step: 2, name: "Find a Tutor", description: "" },
@@ -16,10 +17,11 @@ export class HomeComponent implements OnInit {
 
   constructor(private pageService: PagesService) {
     this.content = this.pageService.getHomepage();
-    console.log(this.content);
+    this.subjects = this.pageService.getSubjects();
+    console.log(this.subjects);
   }
-  public getUrl(source: any) {
-    return this.pageService.buildImageUrl(source);
+  public getUrl(source: Image) {
+    return source ? this.pageService.buildImageUrl(source.asset._ref) : "./assets/photo.png";
   }
 
   ngOnInit(): void {
