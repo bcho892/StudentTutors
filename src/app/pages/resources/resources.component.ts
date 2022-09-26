@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PagesService } from 'src/app/service/pages.service';
-import { Resource } from 'src/app/types/schemas';
+import { Resource, Resourcepage } from 'src/app/types/schemas';
 
 @Component({
   selector: 'app-resources',
@@ -9,7 +9,10 @@ import { Resource } from 'src/app/types/schemas';
 })
 
 export class ResourcesComponent implements OnInit {
+  content!: Resourcepage;
+
   constructor(private pageService: PagesService) {
+    this.content = this.pageService.getResourcepage();
     this.resources = this.resources.concat(this.pageService.getResources());
   }
   resources: Resource[] = [

@@ -10,7 +10,6 @@ export class NavbarComponent implements OnInit {
   constructor() { }
   links: LinkItem[] =
     [
-      { name: "Home", link: "" },
       { name: "About", link: "/About" },
       { name: "Tutors", link: "/Tutors" },
       { name: "Resources", link: "/Resources" },

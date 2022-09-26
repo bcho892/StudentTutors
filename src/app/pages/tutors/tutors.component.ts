@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tutor } from 'src/app/types/util';
-import { SanityService } from 'src/app/service/sanity.service';
+import { PagesService } from 'src/app/service/pages.service';
+import { Tutorpage } from 'src/app/types/schemas';
 @Component({
   selector: 'app-tutors',
   templateUrl: './tutors.component.html',
@@ -8,17 +9,18 @@ import { SanityService } from 'src/app/service/sanity.service';
 })
 export class TutorsComponent implements OnInit {
 
-  constructor(private sanityService: SanityService) { }
-
   tutors: Tutor[] = [];
+  content!: Tutorpage;
+  constructor(private pageService: PagesService) {
+    this.tutors = this.pageService.getTutors();
+    this.content = this.pageService.getTutorpage();
+  }
+
 
   ngOnInit(): void {
-    this.getTutors();
+    window.scrollTo(0, 0);
   }
 
-  async getTutors(): Promise<Tutor[]> {
-    this.tutors = await this.sanityService.getTutors();
-    return this.tutors;
-  }
+
 
 }

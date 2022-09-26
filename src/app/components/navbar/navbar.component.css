@@ -45,9 +45,14 @@
     align-items: center;
     height: fit-content;
     overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+
 }
 
 #logo img {
+    user-select: none;
+    pointer-events: none;
     height: 100%;
     max-width: 170px;
     width: 100%;
