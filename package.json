@@ -23,6 +23,7 @@
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
     "ngx-facebook": "^3.0.0-0",
+    "ngx-google-analytics": "^14.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

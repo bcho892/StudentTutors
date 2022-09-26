@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   project_id: 'fyjyvevw',
+  measurement_id: 'G-FL7YPGRR04'
 };
 
 /*
