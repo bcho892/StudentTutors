@@ -3,11 +3,16 @@
 }
 
 .formcontainer{
+    flex-wrap: wrap;
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    gap: 1rem;
+    column-gap: 1rem;
     
+}
+.calender{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 mat-form-field{
