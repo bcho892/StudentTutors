@@ -1,0 +1,37 @@
+<mat-card id="container">
+    <mat-stepper [orientation]="(stepperOrientation | async)!" color="accent">
+        <mat-step>
+            <div>
+                <form>
+                    <ng-template matStepLabel>Academic Information</ng-template>
+                    <div class="formcontainer">
+                        <mat-form-field color="accent" appearance="fill">
+                            <input type="text" matInput>
+                        </mat-form-field>
+                        <mat-form-field color="accent" appearance="fill">
+                            <input type="text" matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="formcontainer">
+                        
+                    </div>
+                </form>
+            </div>
+            <button mat-button matStepperNext>Next</button>
+        </mat-step>
+        <mat-step>
+            <form>
+                <ng-template matStepLabel>Personal Information</ng-template>
+            </form>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </mat-step>
+        <mat-step>
+            <form>
+                <ng-template matStepLabel>Parent/Guardian</ng-template>
+            </form>
+            <button mat-button matStepperPrevious>Back</button>
+        </mat-step>
+
+    </mat-stepper>
+</mat-card>

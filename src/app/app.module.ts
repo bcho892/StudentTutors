@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatStepperModule } from '@angular/material/stepper';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ProcesscardComponent } from './components/processcard/processcard.component';
@@ -27,6 +28,8 @@ import { TutorcardComponent } from './components/tutorcard/tutorcard.component';
 import { SubjectbadgeComponent } from './components/subjectbadge/subjectbadge.component';
 import { PagesService } from './service/pages.service';
 import { SubjecticonComponent } from './components/small/subjecticon/subjecticon.component';
+import { BookformComponent } from './components/bookform/bookform.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +48,7 @@ import { SubjecticonComponent } from './components/small/subjecticon/subjecticon
     TutorcardComponent,
     SubjectbadgeComponent,
     SubjecticonComponent,
+    BookformComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +61,7 @@ import { SubjecticonComponent } from './components/small/subjecticon/subjecticon
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    MatStepperModule,
     FacebookModule.forRoot()
   ],
   providers: [
