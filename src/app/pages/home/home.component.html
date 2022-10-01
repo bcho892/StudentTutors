@@ -21,7 +21,7 @@
                     <mat-card-content>
                         <div id="subjectgrid">
                             <app-subjecticon *ngFor="let subject of subjects" name="{{subject.name}}"
-                                image="{{getUrl(content.sectiontwo.firsthalf.image)}}"></app-subjecticon>
+                                image="{{getUrl(subject.image)}}"></app-subjecticon>
                         </div>
                     </mat-card-content>
                 </mat-card>
