@@ -5,11 +5,11 @@
                 <a href="https://www.facebook.com/profile.php?id=100086121304331" target="_blank">
                     <mat-icon id="fbicon">facebook</mat-icon>
                 </a>
-                <mat-icon id="emailicon" >mail</mat-icon>
+                <mat-icon id="emailicon">mail</mat-icon>
             </span>
             <span class="bottom">
                 <ul>
-                    <li *ngFor="let link of links"><a href="{{link.link}}">{{link.name}}</a></li>
+                    <li *ngFor="let link of links"><a routerLink="{{link.link}}">{{link.name}}</a></li>
                 </ul>
                 <span class="details">
                     <h6>Terms and Conditions</h6>
