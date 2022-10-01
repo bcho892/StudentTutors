@@ -17,21 +17,14 @@
 
 <div class="section grey">
     <div class="contentcontainer" id="goals">
-        <div class="splitcontainer">
-            <div class="section1">
-                <mat-card>
-                    <h1>Our Main Goals</h1>
-                    <p>{{content.goalsdescription}}</p>
-                </mat-card>
-            </div>
-            <div class="section2">
-                <mat-card *ngFor="let goal of goals">
-                    <h2>{{goal.name}}</h2>
-                    <p>{{goal.description}}</p>
-                </mat-card>
-
-            </div>
-        </div>
+        <mat-card>
+            <h1>Our Main Goals</h1>
+            <p>{{content.goalsdescription}}</p>
+        </mat-card>
+        <mat-card *ngFor="let goal of goals">
+            <h2>{{goal.name}}</h2>
+            <p>{{goal.description}}</p>
+        </mat-card>
     </div>
 </div>
 <div class="section grey">
