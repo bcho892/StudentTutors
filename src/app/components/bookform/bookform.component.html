@@ -19,23 +19,60 @@
                     </div>
                     <div class="formcontainer">
                         <div class="calender">
-                            <div class="">Teaching Schedule</div>
-                            <div class="">Su</div>
-                            <div class="">Mo</div>
-                            <div class="">Tu</div>
-                            <div class="">We</div>
-                            <div class="">Th</div>
-                            <div class="">Fr</div>
-                            <div class="">Sa</div>
+                            <div class=""><strong>Teaching Schedule</strong></div>
+                            <div *ngFor="let day of days">{{day}}</div>
+                            <div>Morning</div>
+                            <div *ngFor="let day of days">
+                                <mat-checkbox></mat-checkbox>
+                            </div>
+                            <div>Afternoon</div>
+                            <div *ngFor="let day of days">
+                                <mat-checkbox></mat-checkbox>
+                            </div>
+                            <div>Evening</div>
+                            <div *ngFor="let day of days">
+                                <mat-checkbox></mat-checkbox>
+                            </div>
                         </div>
+
                     </div>
                 </form>
             </div>
-            <button mat-button matStepperNext>Next</button>
+            <button mat-raised-button color="accent" matStepperNext>Next</button>
         </mat-step>
         <mat-step>
             <form>
                 <ng-template matStepLabel>Personal Information</ng-template>
+                    <div class="formcontainer">
+                        <mat-form-field color="accent" appearance="fill">
+                            <input type="text" matInput>
+                        </mat-form-field>
+                        <mat-form-field color="accent" appearance="fill">
+                            <input type="text" matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="formcontainer">
+                        <mat-form-field color="accent" appearance="fill">
+                            <input type="text" matInput>
+                        </mat-form-field>
+                        <mat-form-field color="accent" appearance="fill">
+                            <input type="date" matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="formcontainer">
+                        <mat-form-field color="accent" appearance="fill">
+                            <input type="text" matInput>
+                        </mat-form-field>
+                        <mat-form-field color="accent" appearance="fill">
+                            <input type="text" matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="formcontainer">
+                        <mat-form-field color="accent" appearance="fill">
+                            <textarea type="text" matInput></textarea>
+                        </mat-form-field>
+                    </div>
+
             </form>
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>

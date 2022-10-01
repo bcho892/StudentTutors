@@ -29,6 +29,7 @@ import { SubjectbadgeComponent } from './components/subjectbadge/subjectbadge.co
 import { PagesService } from './service/pages.service';
 import { SubjecticonComponent } from './components/small/subjecticon/subjecticon.component';
 import { BookformComponent } from './components/bookform/bookform.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { BookformComponent } from './components/bookform/bookform.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCheckboxModule,
     ReactiveFormsModule,
     MatStepperModule,
     FacebookModule.forRoot()

@@ -10,7 +10,7 @@ import { map } from 'rxjs';
   styleUrls: ['./bookform.component.css']
 })
 export class BookformComponent implements OnInit {
-
+  days: string[] = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
   stepperOrientation: Observable<StepperOrientation>;
 
   constructor(breakpointObserver: BreakpointObserver) {
