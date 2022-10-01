@@ -21,6 +21,7 @@ export class ResourcesComponent implements OnInit {
   ]
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
   }
 
 }

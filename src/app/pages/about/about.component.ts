@@ -19,6 +19,7 @@ export class AboutComponent implements OnInit {
     return this.pageService.format(text);
   }
   ngOnInit(): void {
+    window.scrollTo(0, 0);
   }
 
 }
