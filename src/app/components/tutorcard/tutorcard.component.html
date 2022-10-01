@@ -3,7 +3,7 @@
         <img mat-card-avatar src="{{imageUrl(image)}}" alt="{{image}}">
         <div class="text">
             <h1>{{name}}</h1>
-            <p *ngIf="description">{{formatDescription(description)}}</p>
+            <p *ngIf="description !== ''">{{formatDescription(description)}}</p>
             <span class="subjects">
                 <app-subjectbadge *ngFor="let subject of subjects" subject="{{subject.name}}" color="{{subject.color}}">
                 </app-subjectbadge>

@@ -11,6 +11,7 @@ export type Pages = {
 
 export type Homepage = {
     landingtext: string,
+    landingimage: Image,
     sectionone: {
         heading: string,
         firsthalf: {
@@ -19,6 +20,7 @@ export type Homepage = {
         },
         secondhalf: {
             heading: string,
+            secondaryheading: string,
             icons: string[],
         }
     },

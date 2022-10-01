@@ -20,7 +20,7 @@ export class TutorcardComponent implements OnInit {
   }
 
   formatDescription(text: string) {
-    return text.replace("<newline>", "\n");
+    return text.replace(/<newline>/g, '<br>');
   }
 
   imageUrl(source: any) {
