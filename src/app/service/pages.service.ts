@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Aboutpage, Contactpage, DisplaySubject, Goal, Homepage, Pages, Resource, Resourcepage, Tutorpage } from '../types/schemas';
+import { Aboutpage, Bookpage, Contactpage, DisplaySubject, Goal, Homepage, Pages, Resource, Resourcepage, Tutorpage } from '../types/schemas';
 import { Tutor } from '../types/util';
 import { SanityService } from './sanity.service';
 
@@ -14,6 +14,7 @@ export class PagesService {
   private contactpage!: Contactpage;
   private tutorpage!: Tutorpage;
   private resourcepage!: Resourcepage;
+  private bookpage!: Bookpage;
   private tutors!: Tutor[];
   private goals!: Goal[];
   private resources!: Resource[];
@@ -34,6 +35,7 @@ export class PagesService {
     this.contactpage = pages.contactpage;
     this.tutorpage = pages.tutorpage;
     this.resourcepage = pages.resourcepage;
+    this.bookpage = pages.bookpage;
     this.loaded = this.pages ? true : false;
     return this.loaded;
   }
@@ -65,7 +67,9 @@ export class PagesService {
   public getResourcepage(): Resourcepage {
     return this.resourcepage;
   }
-
+  public getBookpage(): Bookpage {
+    return this.bookpage;
+  }
   public getTutors(): Tutor[] {
     return this.tutors;
   }

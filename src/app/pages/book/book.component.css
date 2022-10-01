@@ -1,7 +1,11 @@
-.container{
+.contentcontainer{
+    text-align: center;
+}
+.container {
+    padding-top: 100px;
+    min-height: 100vh;
 }
 
-#formcontainer{
-    padding-top: 120px;
-    min-height: 100vh;
+#formcontainer {
+    padding: 2rem 0;
 }

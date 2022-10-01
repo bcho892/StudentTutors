@@ -137,11 +137,13 @@
                         <input type="tel" name="parentMobile" formControlName="parentMobile" matInput>
                     </mat-form-field>
                 </div>
-                <div class="formcontainer">
-                    <mat-checkbox name="agreed" formControlName="agreed">I agree to share this data with Student Tutors
-                        (Parent approval needed if under 18)
+                <span class="agreement">
+                    <mat-checkbox name="agreed" formControlName="agreed" label="">
                     </mat-checkbox>
-                </div>
+                    <p >I agree to share this data with
+                        Student Tutors
+                        (Parent approval needed if under 18)</p>
+                    </span>
 
             </form>
             <span class="buttoncontainer">

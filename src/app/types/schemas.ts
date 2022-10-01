@@ -5,7 +5,8 @@ export type Pages = {
     aboutpage: Aboutpage,
     contactpage: Contactpage,
     tutorpage: Tutorpage,
-    resourcepage: Resourcepage
+    resourcepage: Resourcepage,
+    bookpage: Bookpage
 }
 
 export type Homepage = {
@@ -74,6 +75,11 @@ export type Contactpage = {
         heading: string,
         body: string
     }
+}
+
+export type Bookpage = {
+    heading: string,
+    body: string,
 }
 
 export type Goal = {

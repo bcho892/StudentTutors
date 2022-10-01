@@ -103,7 +103,8 @@ export class BookformComponent implements OnInit {
     }
   }
   submit(): void {
-    console.log(this.bookForm.valid);
+    if(!this.bookForm.valid) return;
+    
   }
   ngOnInit(): void {
   }

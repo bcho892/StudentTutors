@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PagesService } from 'src/app/service/pages.service';
+import { Bookpage } from 'src/app/types/schemas';
 
 @Component({
   selector: 'app-book',
@@ -6,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book.component.css']
 })
 export class BookComponent implements OnInit {
-
-  constructor() { }
+  content!: Bookpage;
+  constructor(private pageService: PagesService) {
+    this.content = this.pageService.getBookpage();
+  }
 
   ngOnInit(): void {
   }
