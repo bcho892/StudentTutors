@@ -46,6 +46,10 @@
     padding-bottom: 0;
 }
 
+#intro .splitcontainer .section1{
+    align-self: center;
+}
+
 #intro .splitcontainer {
     margin-top: 0;
 }
@@ -68,9 +72,11 @@
 }
 
 #aboutcard {
-    bottom: 5rem;
-    height: 20rem;
     padding: 2rem;
+}
+
+#intro{
+    margin-bottom: 100px;
 }
 
 #highlight {
