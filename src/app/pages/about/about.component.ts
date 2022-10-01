@@ -14,9 +14,10 @@ export class AboutComponent implements OnInit {
   constructor(private pageService: PagesService) {
     this.content = this.pageService.getAboutpage();
     this.goals = this.pageService.getGoals();
-    console.log(this.content);
   }
-
+  format(text: string): string {
+    return this.pageService.format(text);
+  }
   ngOnInit(): void {
   }
 

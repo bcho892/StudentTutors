@@ -9,7 +9,7 @@
             </div>
             <div class="section2">
                 <h1>About Us</h1>
-                <p>{{content.abouttext}}</p>
+                <p>{{format(content.abouttext)}}</p>
             </div>
         </div>
     </div>
@@ -19,12 +19,12 @@
     <div class="contentcontainer" id="goals">
         <mat-card>
             <h1>Our Main Goals</h1>
-            <p>{{content.goalsdescription}}</p>
+            <p>{{format(content.goalsdescription)}}</p>
         </mat-card>
         <div class="goaldiv">
             <mat-card *ngFor="let goal of goals">
                 <h2>{{goal.name}}</h2>
-                <p>{{goal.description}}</p>
+                <p>{{format(goal.description)}}</p>
             </mat-card>
         </div>
     </div>
@@ -35,10 +35,10 @@
 
         <mat-card>
             <h1>{{content.sectionpromoter.heading}}</h1>
-            <p>{{content.sectionpromoter.body}}</p>
+            <p>{{format(content.sectionpromoter.body)}}</p>
             <div class="bottomsection">
                 <h2>{{content.sectionpromoter.name}}</h2>
-                <h3>{{content.sectionpromoter.credidentials}}</h3>
+                <h3>{{format(content.sectionpromoter.credidentials)}}</h3>
             </div>
         </mat-card>
 
