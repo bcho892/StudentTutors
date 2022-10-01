@@ -4,7 +4,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-bookform',
   templateUrl: './bookform.component.html',
@@ -65,6 +65,8 @@ export class BookformComponent implements OnInit {
           Validators.minLength(9),
           Validators.maxLength(11)
         ]),
+      message: new FormControl('', [
+      ]),
       agreed: new FormControl(false, [
         Validators.requiredTrue
       ])
@@ -102,9 +104,28 @@ export class BookformComponent implements OnInit {
         return "Error";
     }
   }
-  submit(): void {
-    if(!this.bookForm.valid) return;
-    
+  async submit(): Promise<Boolean> {
+    if (!this.bookForm.valid) return false;
+    this.bookForm.value.availability = this.bookForm.value.availability.toString();
+    console.log(this.bookForm.value);
+    const data = JSON.stringify(this.bookForm.value);
+    try {
+      const response = await fetch(`https://api.apispreadsheets.com/data/${environment.form_key}`,
+        {
+          method: 'POST',
+          body: data,
+        }
+      )
+      if (response.status === 201) {
+        console.log("Submitted");
+        return true;
+      } else {
+        console.log("rejected");
+        return false
+      }
+    } catch {
+      return false;
+    }
   }
   ngOnInit(): void {
   }

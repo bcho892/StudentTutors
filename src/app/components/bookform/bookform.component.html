@@ -137,13 +137,19 @@
                         <input type="tel" name="parentMobile" formControlName="parentMobile" matInput>
                     </mat-form-field>
                 </div>
+                <div class="formcontainer">
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Anything else we should know?</mat-label>
+                        <textarea type="text" name="message" formControlName="message" matInput></textarea>
+                    </mat-form-field>
+                </div>
                 <span class="agreement">
                     <mat-checkbox name="agreed" formControlName="agreed" label="">
                     </mat-checkbox>
-                    <p >I agree to share this data with
+                    <p>I agree to share this data with
                         Student Tutors
                         (Parent approval needed if under 18)</p>
-                    </span>
+                </span>
 
             </form>
             <span class="buttoncontainer">
