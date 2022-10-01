@@ -1,6 +1,17 @@
+.section {
+    min-height: none;
+}
+
+* {
+    white-space: nowrap;
+}
+
 .contentcontainer {
-    padding-bottom: 0.5rem;
-    padding-top: 1.5rem;
+
+    overflow: hidden;
+    bottom: 0;
+    min-height: none;
+    padding: 1rem 0 0 1rem;
 }
 
 .socials {
@@ -17,7 +28,7 @@
     align-items: center;
 }
 
-.details{
+.details {
     display: flex;
     align-items: center;
     gap: .7rem;
@@ -60,9 +71,11 @@ li a {
     text-decoration: none;
     color: rgb(33, 33, 33);
 }
-a{
+
+a {
     text-decoration: none;
 }
+
 #fbicon {
     width: 50px;
     height: 50px;
@@ -102,18 +115,19 @@ a{
         gap: 1rem;
     }
 
-    .socials{
+    .socials {
         margin: 0;
         margin-left: 0;
     }
 
 }
 
-@media only screen and (max-width: 600px){
-    .details{
-        flex-direction:column;
+@media only screen and (max-width: 600px) {
+    .details {
+        flex-direction: column;
         gap: 0.2rem;
     }
+
     .details * {
         margin: 0;
     }
