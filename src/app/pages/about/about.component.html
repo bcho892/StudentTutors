@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<div class="section blue">
+<div class="section grey">
     <div class="contentcontainer" id="maincard">
         <div class="splitcontainer">
             <div class="section1">
@@ -15,35 +15,33 @@
     </div>
 </div>
 
-<div class="section grey">
+<div class="section blue">
     <div class="contentcontainer" id="goals">
         <mat-card>
             <h1>Our Main Goals</h1>
             <p>{{content.goalsdescription}}</p>
         </mat-card>
-        <mat-card *ngFor="let goal of goals">
-            <h2>{{goal.name}}</h2>
-            <p>{{goal.description}}</p>
-        </mat-card>
+        <div class="goaldiv">
+            <mat-card *ngFor="let goal of goals">
+                <h2>{{goal.name}}</h2>
+                <p>{{goal.description}}</p>
+            </mat-card>
+        </div>
     </div>
 </div>
 <div class="section grey">
     <div class="contentcontainer" id="tonext">
-        <div class="splitcontainer">
-            <div class="section1">
-                <img src="./assets/gyang2.jpg" alt="">
+        <img src="./assets/gyang2.jpg" alt="">
+
+        <mat-card>
+            <h1>{{content.sectionpromoter.heading}}</h1>
+            <p>{{content.sectionpromoter.body}}</p>
+            <div class="bottomsection">
+                <h2>{{content.sectionpromoter.name}}</h2>
+                <h3>{{content.sectionpromoter.credidentials}}</h3>
             </div>
-            <div class="section2">
-                <mat-card>
-                    <h1>{{content.sectionpromoter.heading}}</h1>
-                    <p>{{content.sectionpromoter.body}}</p>
-                    <div class="bottomsection">
-                        <h2>{{content.sectionpromoter.name}}</h2>
-                        <h3>{{content.sectionpromoter.credidentials}}</h3>
-                    </div>
-                </mat-card>
-            </div>
-        </div>
+        </mat-card>
+
     </div>
 </div>
 <app-footer></app-footer>
