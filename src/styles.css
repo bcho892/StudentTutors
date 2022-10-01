@@ -3,7 +3,10 @@
     --bluedark: #618DFF;
     --black: rgb(33, 33, 33);
 }
-
+@font-face {
+    font-family: "Kollektif";
+    src: local("Oxygen"), url(./assets/Kollektif-Bold.ttf) format("truetype");
+}
 
 html,
 body {
