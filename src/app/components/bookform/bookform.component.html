@@ -2,7 +2,7 @@
     <mat-stepper [orientation]="(stepperOrientation | async)!" color="accent">
         <mat-step>
             <div>
-                <form>
+                <form [formGroup]="bookForm">
                     <ng-template matStepLabel>Academic Information</ng-template>
                     <div class="formcontainer">
                         <mat-form-field color="accent" appearance="fill">
@@ -11,13 +11,13 @@
                         </mat-form-field>
                         <mat-form-field color="accent" appearance="fill">
                             <mat-label>Year Level</mat-label>
-                            <input type="number" name="yearlevel" max="6" min="1" placeholder="9" matInput>
+                            <input type="number" formControlName="yearLevel" name="yearLevel" placeholder="9" matInput>
                         </mat-form-field>
                     </div>
                     <div class="formcontainer">
                         <mat-form-field color="accent" appearance="fill">
                             <mat-label>What subjects would you like to take?</mat-label>
-                            <input type="text" matInput>
+                            <input formControlName="subjects" name="subject" type="text" matInput>
                         </mat-form-field>
                     </div>
                     <div class="formcontainer">
@@ -52,7 +52,7 @@
                 </form>
             </div>
             <div class="buttoncontainer">
-                <button mat-raised-button color="accent" matStepperNext id="forward">Next</button>
+                <button mat-raised-button color="accent" type="button" matStepperNext id="forward">Next</button>
             </div>
         </mat-step>
         <mat-step>
@@ -61,11 +61,11 @@
                 <div class="formcontainer">
                     <mat-form-field color="accent" appearance="fill">
                         <mat-label>First Name</mat-label>
-                        <input type="text" matInput>
+                        <input type="text" name="firstName" formControlName="firstName" matInput>
                     </mat-form-field>
                     <mat-form-field color="accent" appearance="fill">
                         <mat-label>Last Name</mat-label>
-                        <input type="text" matInput>
+                        <input type="text" name="lastName" formControlName="lastName" matInput>
                     </mat-form-field>
                 </div>
                 <div class="formcontainer">
@@ -97,8 +97,8 @@
 
             </form>
             <span class="buttoncontainer">
-                <button mat-raised-button matStepperPrevious id="back">Back</button>
-                <button mat-raised-button color="accent" matStepperNext id="forward">Next</button>
+                <button mat-raised-button type="button" matStepperPrevious id="back">Back</button>
+                <button mat-raised-button color="accent" type="button" matStepperNext id="forward">Next</button>
             </span>
         </mat-step>
         <mat-step>
@@ -135,12 +135,13 @@
                     </mat-form-field>
                 </div>
                 <div class="formcontainer">
-                    <mat-checkbox name="agreed" formControlName="agreed">Permission is granted by parent if under 18</mat-checkbox>
+                    <mat-checkbox name="agreed" formControlName="agreed">Permission is granted by parent if under 18
+                    </mat-checkbox>
                 </div>
 
             </form>
             <span class="buttoncontainer">
-                <button mat-raised-button matStepperPrevious id="back">Back</button>
+                <button mat-raised-button matStepperPrevious type="button" id="back">Back</button>
                 <button mat-raised-button type="submit" color="accent" id="forward">Submit</button>
             </span>
         </mat-step>

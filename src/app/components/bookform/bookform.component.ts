@@ -22,23 +22,43 @@ export class BookformComponent implements OnInit {
     this.bookForm = this.formBuilder.group({
       schoolName: new FormControl('',
         Validators.required),
-      yearLevel: new FormControl(''),
-      subjects: new FormControl(''),
+      yearLevel: new FormControl('', [
+        Validators.required,
+        Validators.min(1),
+        Validators.max(13)
+      ]),
+      subjects: new FormControl('', [
+        Validators.required
+      ]),
       availability: new FormArray([],
         Validators.required),
-      firstName: new FormControl(''),
+      firstName: new FormControl('', [
+        Validators.required
+      ]),
       lastName: new FormControl(''),
       middleName: new FormControl(''),
-      email: new FormControl(''),
-      mobile: new FormControl(''),
+      email: new FormControl('', [
+        Validators.email,
+        Validators.required
+      ]),
+      mobile: new FormControl('', [
+        Validators.minLength(9),
+        Validators.maxLength(11)
+      ]
+      ),
       address: new FormControl(''),
       parentFirstName: new FormControl(''),
       parentLastName: new FormControl(''),
       parentMiddleName: new FormControl(''),
       parentEmail: new FormControl(''),
-      parentMobile: new FormControl(''),
-      agreed: new FormControl(false,
-        Validators.requiredTrue)
+      parentMobile: new FormControl('',
+        [
+          Validators.minLength(9),
+          Validators.maxLength(11)
+        ]),
+      agreed: new FormControl(false, [
+        Validators.requiredTrue
+      ])
     })
   }
 
