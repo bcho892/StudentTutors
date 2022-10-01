@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { PagesService } from 'src/app/service/pages.service';
-import { ProcessStep } from 'src/app/types/util';
 import { Image } from 'src/app/types/schemas';
+
 @Component({
   selector: 'app-processcard',
   templateUrl: './processcard.component.html',

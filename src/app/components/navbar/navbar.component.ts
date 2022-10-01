@@ -13,7 +13,6 @@ export class NavbarComponent implements OnInit {
       { name: "Home", link: "" },
       { name: "About", link: "/About" },
       { name: "Tutors", link: "/Tutors" },
-      { name: "Resources", link: "/Resources" },
       { name: "Contact", link: "/Contact" }
     ];
   opened: boolean = false;

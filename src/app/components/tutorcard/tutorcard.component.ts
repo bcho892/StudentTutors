@@ -8,13 +8,20 @@ import { Subject } from 'src/app/types/util';
   styleUrls: ['./tutorcard.component.css']
 })
 export class TutorcardComponent implements OnInit {
-  constructor(private sanityService: SanityService) { }
+  constructor(private sanityService: SanityService) {
+    this.description = this.formatDescription(this.description);
+  }
 
   @Input() name!: string;
   @Input() image!: string;
   @Input() description!: string;
   @Input() subjects!: Subject[];
+  
   ngOnInit(): void {
+  }
+
+  formatDescription(text: string) {
+    return text.replace("<newline>", "\n");
   }
 
   imageUrl(source: any) {
