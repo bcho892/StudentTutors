@@ -51,7 +51,9 @@
     <div class="contentcontainer" id="process">
         <h1>Our Process</h1>
         <span class="processcards">
-            <app-processcard *ngFor="let process of process" [process]="process"></app-processcard>
+            <app-processcard *ngFor="let process of process" [step]="process.step" [name]="process.name"
+                [description]="process.description" image="">
+            </app-processcard>
         </span>
         <p>Want some changes to make this work for you? Feel free to <a routerLink="/Contact">contact us</a> to discuss!
         </p>
