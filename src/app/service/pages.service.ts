@@ -40,6 +40,10 @@ export class PagesService {
     return this.loaded;
   }
 
+  public format(text: string) {
+    return text.replace(/<newline>/g, '\n');
+  }
+
   public buildImageUrl(source: any) {
     return this.sanityService.urlFor(source);
   }

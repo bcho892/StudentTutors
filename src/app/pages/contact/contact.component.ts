@@ -12,7 +12,9 @@ export class ContactComponent implements OnInit {
   constructor(private pageService: PagesService) {
     this.content = this.pageService.getContactpage();
   }
-
+  format(text:string):string{
+    return this.pageService.format(text);
+  }
   ngOnInit(): void {
   }
 

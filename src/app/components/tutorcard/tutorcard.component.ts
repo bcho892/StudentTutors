@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PagesService } from 'src/app/service/pages.service';
 import { SanityService } from 'src/app/service/sanity.service';
 import { Subject } from 'src/app/types/util';
 
@@ -8,7 +9,7 @@ import { Subject } from 'src/app/types/util';
   styleUrls: ['./tutorcard.component.css']
 })
 export class TutorcardComponent implements OnInit {
-  constructor(private sanityService: SanityService) {
+  constructor(private sanityService: SanityService, private pageService: PagesService) {
   }
 
   @Input() name!: string;
@@ -20,7 +21,7 @@ export class TutorcardComponent implements OnInit {
   }
 
   formatDescription(text: string) {
-    return text.replace(/<newline>/g, '\n');
+    return this.pageService.format(text);
   }
 
   imageUrl(source: any) {
