@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="landing">
-    <img src="./assets/classroom.jpg">
+    <img src="{{getUrl(content.landingimage)}}">
     <span class="heading">
         <h1>{{content.landingtext}}</h1>
     </span>
@@ -21,7 +21,7 @@
                     <mat-card-content>
                         <div id="subjectgrid">
                             <app-subjecticon *ngFor="let subject of subjects" name="{{subject.name}}"
-                                image="{{getUrl(content.landingimage)}}"></app-subjecticon>
+                                image="{{getUrl(content.sectiontwo.firsthalf.image)}}"></app-subjecticon>
                         </div>
                     </mat-card-content>
                 </mat-card>
