@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FacebookService, InitParams } from 'ngx-facebook';
 import { PagesService } from './service/pages.service';
 import { NavigationEnd, Router } from '@angular/router';
-import { Homepage } from './types/schemas';
 import { environment } from 'src/environments/environment';
 
 declare const gtag: Function;
@@ -14,8 +13,7 @@ declare const gtag: Function;
 })
 export class AppComponent {
   loaded: boolean = false;
-  title = 'StudentTutors';
-  homepage!: Homepage[];
+  title = 'Student Tutors';
   constructor(private facebookService: FacebookService, private pageService: PagesService, public router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
