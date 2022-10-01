@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
     //console.log(this.subjects);
   }
   public getUrl(source: Image) {
-    return source ? this.pageService.buildImageUrl(source.asset._ref) : "./assets/photo.png";
+    return source && source.asset ? this.pageService.buildImageUrl(source.asset._ref) : "./assets/photo.png";
   }
   format(text: string) {
     return this.pageService.format(text);

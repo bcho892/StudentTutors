@@ -114,7 +114,6 @@ export class BookformComponent implements OnInit {
     let currentDate = new Date();
     this.bookForm.value.availability = this.bookForm.value.availability.toString();
     this.bookForm.value.submittedDate = currentDate.toString();
-    console.log(this.bookForm.value);
     const data = JSON.stringify(this.bookForm.value);
     try {
       const response = await fetch(`https://api.apispreadsheets.com/data/${environment.form_key}`,
