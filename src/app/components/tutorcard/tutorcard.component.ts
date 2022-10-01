@@ -9,14 +9,13 @@ import { Subject } from 'src/app/types/util';
 })
 export class TutorcardComponent implements OnInit {
   constructor(private sanityService: SanityService) {
-    this.description = this.formatDescription(this.description);
   }
 
   @Input() name!: string;
   @Input() image!: string;
   @Input() description!: string;
   @Input() subjects!: Subject[];
-  
+
   ngOnInit(): void {
   }
 
