@@ -1,4 +1,44 @@
-.container{
+@keyframes bob {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5vh);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.container {
     height: 100%;
 }
 
+.loadingscreen {
+    position: fixed;
+    overflow: hidden;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    transition: width 1s;
+    z-index: 999;
+}
+
+.loadingscreen img {
+    animation-name: bob;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    padding: 0 1rem;
+    width: 90vw;
+    max-width: 1100px;
+}
+
+.remove {
+    width: 0;
+}

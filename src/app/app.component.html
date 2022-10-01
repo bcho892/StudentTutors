@@ -1,4 +1,7 @@
 <!-- Toolbar -->
+<div class="loadingscreen" [ngClass]="{'remove': loaded}">
+    <img src="./assets/logo.svg" alt="">
+</div>
 <div *ngIf="loaded" class="container">
     <router-outlet></router-outlet>
 </div>
