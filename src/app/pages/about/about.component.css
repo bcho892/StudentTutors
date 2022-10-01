@@ -10,16 +10,9 @@
 
 
 
-#goals .section1 {
-    z-index: 1;
-}
-
-#goals .splitcontainer .section2 {
-    display: flex;
-    flex-direction: column;
+#goals{
     gap: 1rem;
 }
-
 
 #tonext .section2 {
     flex: 2;
@@ -47,6 +40,10 @@
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 0;
+}
+#tonext .section1 img{
+    position: absolute;
+    top: 0;
 }
 
 @media only screen and (min-width:820px) {

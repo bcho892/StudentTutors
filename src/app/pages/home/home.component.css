@@ -57,13 +57,13 @@
 .landing h1 {
     font-family: 'Kollektif';
     margin: auto;
-    max-width: 850px;
+    max-width: 90vw;
     position: relative;
-    top: 35vh;
-    font-weight: 900;
+    top: 47vh;
+    font-weight: 300;
     text-align: center;
-    line-height: 8rem;
-    font-size: 8.5rem;
+    line-height: 6rem;
+    font-size: 6rem;
     color: white;
 }
 
@@ -150,7 +150,7 @@
     }
 }
 
-@media only screen and (max-width: 410px) {
+@media only screen and (max-width: 530px) {
     .landing h1 {
         font-size: 3rem;
         line-height: 3rem;
