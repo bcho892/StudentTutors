@@ -16,11 +16,11 @@ export type Homepage = {
         heading: string,
         firsthalf: {
             heading: string,
+            secondaryheading: string,
             body: string,
         },
         secondhalf: {
             heading: string,
-            secondaryheading: string,
             icons: string[],
         }
     },

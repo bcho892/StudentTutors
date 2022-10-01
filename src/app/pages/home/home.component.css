@@ -27,7 +27,7 @@
 .landing img {
     position: absolute;
     width: 100%;
-    filter: hue-rotate(202deg) brightness(0.65);
+    filter:  brightness(0.65);
     height: 100%;
     object-fit: cover;
 }
