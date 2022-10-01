@@ -30,6 +30,8 @@ import { PagesService } from './service/pages.service';
 import { SubjecticonComponent } from './components/small/subjecticon/subjecticon.component';
 import { BookformComponent } from './components/bookform/bookform.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
+
 
 @NgModule({
   declarations: [
@@ -62,6 +64,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
+    MatDividerModule,
     ReactiveFormsModule,
     MatStepperModule,
     FacebookModule.forRoot()

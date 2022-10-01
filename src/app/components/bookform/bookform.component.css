@@ -10,10 +10,22 @@
     
 }
 .calender{
+    padding: 1rem 0;
     width: 100%;
     display: grid;
     row-gap:0.75rem;
     grid-template-columns: 30% 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.buttoncontainer{
+    width: 100%;
+    display: flex;
+}
+#forward{
+    margin-left: auto;
+}
+
+p{
+    font-weight: 300;
 }
 
 form{

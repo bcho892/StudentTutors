@@ -6,17 +6,24 @@
                     <ng-template matStepLabel>Academic Information</ng-template>
                     <div class="formcontainer">
                         <mat-form-field color="accent" appearance="fill">
+                            <mat-label>School Name</mat-label>
                             <input type="text" matInput>
                         </mat-form-field>
                         <mat-form-field color="accent" appearance="fill">
-                            <input type="text" matInput>
+                            <mat-label>Year Level</mat-label>
+                            <input type="number" name="yearlevel" max="6" min="1" placeholder="9" matInput>
                         </mat-form-field>
                     </div>
                     <div class="formcontainer">
                         <mat-form-field color="accent" appearance="fill">
+                            <mat-label>What subjects would you like to take?</mat-label>
                             <input type="text" matInput>
                         </mat-form-field>
                     </div>
+                    <div class="formcontainer">
+                        <p>Let us know your avaliablility.</p>
+                    </div>
+                    <mat-divider></mat-divider>
                     <div class="formcontainer">
                         <div class="calender">
                             <div class=""><strong>Teaching Schedule</strong></div>
@@ -34,54 +41,99 @@
                                 <mat-checkbox></mat-checkbox>
                             </div>
                         </div>
-
                     </div>
+                    <mat-divider></mat-divider>
                 </form>
             </div>
-            <button mat-raised-button color="accent" matStepperNext>Next</button>
+            <div class="buttoncontainer">
+                <button mat-raised-button color="accent" matStepperNext id="forward">Next</button>
+            </div>
         </mat-step>
         <mat-step>
             <form>
                 <ng-template matStepLabel>Personal Information</ng-template>
-                    <div class="formcontainer">
-                        <mat-form-field color="accent" appearance="fill">
-                            <input type="text" matInput>
-                        </mat-form-field>
-                        <mat-form-field color="accent" appearance="fill">
-                            <input type="text" matInput>
-                        </mat-form-field>
-                    </div>
-                    <div class="formcontainer">
-                        <mat-form-field color="accent" appearance="fill">
-                            <input type="text" matInput>
-                        </mat-form-field>
-                        <mat-form-field color="accent" appearance="fill">
-                            <input type="date" matInput>
-                        </mat-form-field>
-                    </div>
-                    <div class="formcontainer">
-                        <mat-form-field color="accent" appearance="fill">
-                            <input type="text" matInput>
-                        </mat-form-field>
-                        <mat-form-field color="accent" appearance="fill">
-                            <input type="text" matInput>
-                        </mat-form-field>
-                    </div>
-                    <div class="formcontainer">
-                        <mat-form-field color="accent" appearance="fill">
-                            <textarea type="text" matInput></textarea>
-                        </mat-form-field>
-                    </div>
+                <div class="formcontainer">
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>First Name</mat-label>
+                        <input type="text" matInput>
+                    </mat-form-field>
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Last Name</mat-label>
+                        <input type="text" matInput>
+                    </mat-form-field>
+                </div>
+                <div class="formcontainer">
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Middle Name(s)</mat-label>
+                        <input type="text" matInput>
+                    </mat-form-field>
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Date of Birth</mat-label>
+                        <input type="date" matInput>
+                    </mat-form-field>
+                </div>
+                <div class="formcontainer">
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput>
+                    </mat-form-field>
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Mobile</mat-label>
+                        <input type="tel" matInput>
+                    </mat-form-field>
+                </div>
+                <div class="formcontainer">
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Full Address</mat-label>
+                        <textarea type="text" matInput></textarea>
+                    </mat-form-field>
+                </div>
 
             </form>
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-button matStepperNext>Next</button>
+            <span class="buttoncontainer">
+                <button mat-raised-button matStepperPrevious id="back">Back</button>
+                <button mat-raised-button color="accent" matStepperNext id="forward">Next</button>
+            </span>
         </mat-step>
         <mat-step>
             <form>
                 <ng-template matStepLabel>Parent/Guardian</ng-template>
+                <div class="formcontainer">
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>First Name</mat-label>
+                        <input type="text" matInput>
+                    </mat-form-field>
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Middle Name(s)</mat-label>
+                        <input type="text" matInput>
+                    </mat-form-field>
+                </div>
+                <div class="formcontainer">
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Last Name</mat-label>
+                        <input type="text" matInput>
+                    </mat-form-field>
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Relationship</mat-label>
+                        <input type="text" matInput>
+                    </mat-form-field>
+                </div>
+                <div class="formcontainer">
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput>
+                    </mat-form-field>
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Mobile</mat-label>
+                        <input type="tel" matInput>
+                    </mat-form-field>
+                </div>
+                <div class="formcontainer">
+                    <mat-checkbox>Permission is granted by parent if under 18</mat-checkbox>
+                </div>
+
             </form>
-            <button mat-button matStepperPrevious>Back</button>
+            <button mat-raised-button matStepperPrevious>Back</button>
         </mat-step>
 
     </mat-stepper>
