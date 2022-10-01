@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./arrowbutton.component.css']
 })
 export class ArrowbuttonComponent implements OnInit {
+  @Input() toPage!: string;
   @Input() text!: string;
   @Input() blue!: boolean;
   constructor() { }

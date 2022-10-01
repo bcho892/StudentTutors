@@ -1,7 +1,8 @@
-<button mat-stroked-button
-[ngClass]="blue ? 'blue' : 'grey'">
-    <span class="buttoncontent">
-        {{text}}
-        <mat-icon>arrow_forward</mat-icon>
-    </span>
-</button>
+<a routerLink="{{toPage}}">
+    <button mat-stroked-button [ngClass]="blue ? 'blue' : 'grey'">
+        <span class="buttoncontent">
+            {{text}}
+            <mat-icon>arrow_forward</mat-icon>
+        </span>
+    </button>
+</a>
