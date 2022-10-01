@@ -3,6 +3,7 @@ import { StepperOrientation } from '@angular/material/stepper';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-bookform',
@@ -12,11 +13,65 @@ import { map } from 'rxjs';
 export class BookformComponent implements OnInit {
   days: string[] = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
   stepperOrientation: Observable<StepperOrientation>;
-
-  constructor(breakpointObserver: BreakpointObserver) {
+  bookForm: FormGroup;
+  constructor(private breakpointObserver: BreakpointObserver, private formBuilder: FormBuilder) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 850px)')
       .pipe(map(({ matches }) => (matches ? 'horizontal' : 'vertical')));
+
+    this.bookForm = this.formBuilder.group({
+      schoolName: new FormControl('',
+        Validators.required),
+      yearLevel: new FormControl(''),
+      subjects: new FormControl(''),
+      availability: new FormArray([],
+        Validators.required),
+      firstName: new FormControl(''),
+      lastName: new FormControl(''),
+      middleName: new FormControl(''),
+      email: new FormControl(''),
+      mobile: new FormControl(''),
+      address: new FormControl(''),
+      parentFirstName: new FormControl(''),
+      parentLastName: new FormControl(''),
+      parentMiddleName: new FormControl(''),
+      parentEmail: new FormControl(''),
+      parentMobile: new FormControl(''),
+      agreed: new FormControl(false,
+        Validators.requiredTrue)
+    })
+  }
+
+  onAvaliabilityChange(event: any) {
+    const selectedTimes = (this.bookForm.controls['availability'] as FormArray);
+    const timeSlot = event.source.value;
+    if (event.checked) {
+      selectedTimes.push(new FormControl(timeSlot));
+    } else {
+      const index = selectedTimes.controls.findIndex(item => item.value === timeSlot);
+      selectedTimes.removeAt(index);
+    }
+  }
+
+  formatDate(abbreviation: string): string {
+    switch (abbreviation) {
+      case "Mo":
+        return "Monday";
+      case "Tu":
+        return "Tuesday";
+      case "We":
+        return "Wednesday";
+      case "Th":
+        return "Thursday";
+      case "Fr":
+        return "Friday";
+      case "Sa":
+        return "Saturday";
+      case "Su":
+        return "Sunday";
+      default:
+        return "Error";
+    }
   }
 
   ngOnInit(): void {

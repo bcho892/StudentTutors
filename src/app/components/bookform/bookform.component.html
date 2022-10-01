@@ -7,7 +7,7 @@
                     <div class="formcontainer">
                         <mat-form-field color="accent" appearance="fill">
                             <mat-label>School Name</mat-label>
-                            <input type="text" matInput>
+                            <input type="text" formControlName="schoolName" name="schoolName" matInput>
                         </mat-form-field>
                         <mat-form-field color="accent" appearance="fill">
                             <mat-label>Year Level</mat-label>
@@ -30,15 +30,21 @@
                             <div *ngFor="let day of days">{{day}}</div>
                             <div>Morning</div>
                             <div *ngFor="let day of days">
-                                <mat-checkbox></mat-checkbox>
+                                <mat-checkbox (change)="onAvaliabilityChange($event)"
+                                    [value]="formatDate(day) + ' Morning'">
+                                </mat-checkbox>
                             </div>
                             <div>Afternoon</div>
                             <div *ngFor="let day of days">
-                                <mat-checkbox></mat-checkbox>
+                                <mat-checkbox (change)="onAvaliabilityChange($event)"
+                                    [value]="formatDate(day) + ' Afternoon'">
+                                </mat-checkbox>
                             </div>
                             <div>Evening</div>
                             <div *ngFor="let day of days">
-                                <mat-checkbox></mat-checkbox>
+                                <mat-checkbox (change)="onAvaliabilityChange($event)"
+                                    [value]="formatDate(day) + ' Evening'">
+                                </mat-checkbox>
                             </div>
                         </div>
                     </div>
@@ -129,11 +135,14 @@
                     </mat-form-field>
                 </div>
                 <div class="formcontainer">
-                    <mat-checkbox>Permission is granted by parent if under 18</mat-checkbox>
+                    <mat-checkbox name="agreed" formControlName="agreed">Permission is granted by parent if under 18</mat-checkbox>
                 </div>
 
             </form>
-            <button mat-raised-button matStepperPrevious>Back</button>
+            <span class="buttoncontainer">
+                <button mat-raised-button matStepperPrevious id="back">Back</button>
+                <button mat-raised-button type="submit" color="accent" id="forward">Submit</button>
+            </span>
         </mat-step>
 
     </mat-stepper>
