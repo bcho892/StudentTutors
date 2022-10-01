@@ -1,5 +1,27 @@
 #container {
     display: flex;
+    transition: all 0.5s;
+}
+
+#spinning {
+    position: absolute;
+    z-index: 2;
+    margin: auto;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+.submitting {
+
+    filter: blur(1rem) brightness(0.7);
+    pointer-events: none;
 }
 
 .formcontainer {
@@ -16,10 +38,10 @@
 .agreement {
     display: flex;
     gap: 10px;
-    align-items:center;
+    align-items: center;
 }
 
-.agreement p{
+.agreement p {
     margin: 0;
     font-size: small;
     align-self: flex-end;

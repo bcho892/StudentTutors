@@ -31,6 +31,7 @@ import { SubjecticonComponent } from './components/small/subjecticon/subjecticon
 import { BookformComponent } from './components/bookform/bookform.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { MatDividerModule } from '@angular/material/divider';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
+    MatProgressSpinnerModule,
     MatDividerModule,
     ReactiveFormsModule,
     MatStepperModule,

@@ -1,5 +1,11 @@
 <mat-card id="container">
-    <mat-stepper [orientation]="(stepperOrientation | async)!" color="accent">
+    <mat-spinner *ngIf="submitting" id="spinning" color="accent"></mat-spinner>
+    <div id="spinning" *ngIf="!submitting && submitted">
+        <h2>Thanks for submitting! <br> we'll be in touch</h2>
+        <button mat-raised-button color="accent" (click)="this.submitted = false">Submit another</button>
+    </div>
+    <mat-stepper #stepper [ngClass]="{'submitting': submitting || submitted}" [orientation]="(stepperOrientation | async)!"
+        color="accent">
         <mat-step>
             <div>
                 <form [formGroup]="bookForm">
@@ -154,9 +160,11 @@
             </form>
             <span class="buttoncontainer">
                 <button mat-raised-button matStepperPrevious type="button" id="back">Back</button>
-                <button mat-raised-button (click)="submit()" color="accent" id="forward">Submit</button>
+                <button mat-raised-button (click)="submit();" color="accent"
+                    id="forward">Submit</button>
             </span>
         </mat-step>
 
     </mat-stepper>
+
 </mat-card>

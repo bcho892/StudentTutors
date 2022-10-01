@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { StepperOrientation } from '@angular/material/stepper';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
@@ -11,6 +11,10 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./bookform.component.css']
 })
 export class BookformComponent implements OnInit {
+
+  @ViewChild('stepper') stepper: any;
+  submitting: boolean = false;
+  submitted: boolean = false;
   days: string[] = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
   stepperOrientation: Observable<StepperOrientation>;
   bookForm: FormGroup;
@@ -104,9 +108,12 @@ export class BookformComponent implements OnInit {
         return "Error";
     }
   }
-  async submit(): Promise<Boolean> {
-    if (!this.bookForm.valid) return false;
+  async submit(): Promise<void> {
+    if (!this.bookForm.valid) return;
+    this.submitting = true;
+    let currentDate = new Date();
     this.bookForm.value.availability = this.bookForm.value.availability.toString();
+    this.bookForm.value.submittedDate = currentDate.toString();
     console.log(this.bookForm.value);
     const data = JSON.stringify(this.bookForm.value);
     try {
@@ -118,13 +125,19 @@ export class BookformComponent implements OnInit {
       )
       if (response.status === 201) {
         console.log("Submitted");
-        return true;
+        this.bookForm.reset();
+        this.stepper.reset();
+        this.submitting = false;
+        this.submitted = true;
       } else {
         console.log("rejected");
-        return false
+        this.submitting = false;
+        return;
       }
     } catch {
-      return false;
+      this.submitting = false;
+      console.error("Something went wrong");
+      return;
     }
   }
   ngOnInit(): void {
