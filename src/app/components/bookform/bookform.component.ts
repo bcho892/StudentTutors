@@ -35,22 +35,31 @@ export class BookformComponent implements OnInit {
       firstName: new FormControl('', [
         Validators.required
       ]),
-      lastName: new FormControl(''),
+      lastName: new FormControl('', [
+        Validators.required
+      ]),
       middleName: new FormControl(''),
+      dob: new FormControl('', [
+      ]),
       email: new FormControl('', [
         Validators.email,
         Validators.required
       ]),
       mobile: new FormControl('', [
         Validators.minLength(9),
-        Validators.maxLength(11)
+        Validators.maxLength(11),
+        Validators.required,
+        Validators.pattern('^[0-9]*$')
       ]
       ),
       address: new FormControl(''),
       parentFirstName: new FormControl(''),
       parentLastName: new FormControl(''),
       parentMiddleName: new FormControl(''),
-      parentEmail: new FormControl(''),
+      parentRelationship: new FormControl(''),
+      parentEmail: new FormControl('', [
+        Validators.email
+      ]),
       parentMobile: new FormControl('',
         [
           Validators.minLength(9),
@@ -93,7 +102,9 @@ export class BookformComponent implements OnInit {
         return "Error";
     }
   }
-
+  submit(): void {
+    console.log(this.bookForm.valid);
+  }
   ngOnInit(): void {
   }
 

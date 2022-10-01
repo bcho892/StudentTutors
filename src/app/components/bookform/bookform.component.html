@@ -4,6 +4,7 @@
             <div>
                 <form [formGroup]="bookForm">
                     <ng-template matStepLabel>Academic Information</ng-template>
+                    <p>Some things about your education</p>
                     <div class="formcontainer">
                         <mat-form-field color="accent" appearance="fill">
                             <mat-label>School Name</mat-label>
@@ -21,7 +22,7 @@
                         </mat-form-field>
                     </div>
                     <div class="formcontainer">
-                        <p>Let us know your avaliablility.</p>
+                        <p>Let us know your avaliablility (Tick the times you are free).</p>
                     </div>
                     <mat-divider></mat-divider>
                     <div class="formcontainer">
@@ -56,8 +57,9 @@
             </div>
         </mat-step>
         <mat-step>
-            <form>
+            <form [formGroup]="bookForm">
                 <ng-template matStepLabel>Personal Information</ng-template>
+                <p>Some contact details</p>
                 <div class="formcontainer">
                     <mat-form-field color="accent" appearance="fill">
                         <mat-label>First Name</mat-label>
@@ -71,27 +73,27 @@
                 <div class="formcontainer">
                     <mat-form-field color="accent" appearance="fill">
                         <mat-label>Middle Name(s)</mat-label>
-                        <input type="text" matInput>
+                        <input type="text" name="middleName" matInput>
                     </mat-form-field>
                     <mat-form-field color="accent" appearance="fill">
                         <mat-label>Date of Birth</mat-label>
-                        <input type="date" matInput>
+                        <input type="date" formControlName="dob" name="dob" matInput>
                     </mat-form-field>
                 </div>
                 <div class="formcontainer">
                     <mat-form-field color="accent" appearance="fill">
                         <mat-label>Email</mat-label>
-                        <input type="email" matInput>
+                        <input type="email" name="email" formControlName="email" matInput>
                     </mat-form-field>
                     <mat-form-field color="accent" appearance="fill">
                         <mat-label>Mobile</mat-label>
-                        <input type="tel" matInput>
+                        <input type="tel" name="mobile" formControlName="mobile" matInput>
                     </mat-form-field>
                 </div>
                 <div class="formcontainer">
                     <mat-form-field color="accent" appearance="fill">
                         <mat-label>Full Address</mat-label>
-                        <textarea type="text" matInput></textarea>
+                        <textarea type="text" name="address" formControlName="address" matInput></textarea>
                     </mat-form-field>
                 </div>
 
@@ -102,47 +104,49 @@
             </span>
         </mat-step>
         <mat-step>
-            <form>
+            <form [formGroup]="bookForm">
                 <ng-template matStepLabel>Parent/Guardian</ng-template>
+                <p>For use by Parent/Guardian (optional)</p>
                 <div class="formcontainer">
                     <mat-form-field color="accent" appearance="fill">
                         <mat-label>First Name</mat-label>
-                        <input type="text" matInput>
+                        <input type="text" name="parentFirstName" matInput>
                     </mat-form-field>
                     <mat-form-field color="accent" appearance="fill">
                         <mat-label>Middle Name(s)</mat-label>
-                        <input type="text" matInput>
+                        <input type="text" name="parentMiddleName" matInput>
                     </mat-form-field>
                 </div>
                 <div class="formcontainer">
                     <mat-form-field color="accent" appearance="fill">
                         <mat-label>Last Name</mat-label>
-                        <input type="text" matInput>
+                        <input type="text" name="parentLastName" matInput>
                     </mat-form-field>
                     <mat-form-field color="accent" appearance="fill">
                         <mat-label>Relationship</mat-label>
-                        <input type="text" matInput>
+                        <input type="text" name="parentRelationship" matInput>
                     </mat-form-field>
                 </div>
                 <div class="formcontainer">
                     <mat-form-field color="accent" appearance="fill">
                         <mat-label>Email</mat-label>
-                        <input type="email" matInput>
+                        <input type="email" name="parentEmail" formControlName="parentEmail" matInput>
                     </mat-form-field>
                     <mat-form-field color="accent" appearance="fill">
                         <mat-label>Mobile</mat-label>
-                        <input type="tel" matInput>
+                        <input type="tel" name="parentMobile" formControlName="parentMobile" matInput>
                     </mat-form-field>
                 </div>
                 <div class="formcontainer">
-                    <mat-checkbox name="agreed" formControlName="agreed">Permission is granted by parent if under 18
+                    <mat-checkbox name="agreed" formControlName="agreed">I agree to share this data with Student Tutors
+                        (Parent approval needed if under 18)
                     </mat-checkbox>
                 </div>
 
             </form>
             <span class="buttoncontainer">
                 <button mat-raised-button matStepperPrevious type="button" id="back">Back</button>
-                <button mat-raised-button type="submit" color="accent" id="forward">Submit</button>
+                <button mat-raised-button (click)="submit()" color="accent" id="forward">Submit</button>
             </span>
         </mat-step>
 
