@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import { cities } from 'src/app/types/util';
 @Component({
   selector: 'app-bookform',
   templateUrl: './bookform.component.html',
@@ -13,6 +14,7 @@ import { environment } from 'src/environments/environment';
 export class BookformComponent implements OnInit {
 
   @ViewChild('stepper') stepper: any;
+  cities: string[] = cities;
   submitting: boolean = false;
   submitted: boolean = false;
   days: string[] = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
@@ -56,7 +58,14 @@ export class BookformComponent implements OnInit {
         Validators.pattern('^[0-9]*$')
       ]
       ),
-      address: new FormControl(''),
+      street: new FormControl(''),
+      suburb: new FormControl(''),
+      city: new FormControl(''),
+      postCode: new FormControl('', [
+        Validators.maxLength(5),
+        Validators.minLength(4),
+        Validators.pattern('^[0-9]*$')
+      ]),
       parentFirstName: new FormControl(''),
       parentLastName: new FormControl(''),
       parentMiddleName: new FormControl(''),

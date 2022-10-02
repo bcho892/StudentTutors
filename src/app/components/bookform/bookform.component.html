@@ -4,8 +4,8 @@
         <h2>Thanks for submitting! <br> we'll be in touch</h2>
         <button mat-raised-button color="accent" (click)="this.submitted = false">Submit another</button>
     </div>
-    <mat-stepper #stepper [ngClass]="{'submitting': submitting || submitted}" [orientation]="(stepperOrientation | async)!"
-        color="accent">
+    <mat-stepper #stepper [ngClass]="{'submitting': submitting || submitted}"
+        [orientation]="(stepperOrientation | async)!" color="accent">
         <mat-step>
             <div>
                 <form [formGroup]="bookForm">
@@ -98,8 +98,26 @@
                 </div>
                 <div class="formcontainer">
                     <mat-form-field color="accent" appearance="fill">
-                        <mat-label>Full Address</mat-label>
-                        <textarea type="text" name="address" formControlName="address" matInput></textarea>
+                        <mat-label>Street</mat-label>
+                        <input type="text" name="street" formControlName="street" matInput>
+                    </mat-form-field>
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Suburb</mat-label>
+                        <input type="text" name="suburb" formControlName="suburb" matInput>
+                    </mat-form-field>
+                </div>
+                <div class="formcontainer">
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>City</mat-label>
+                        <mat-select formControlName="city" name="city">
+                            <mat-option value="{{dispCity}}" *ngFor="let dispCity of cities">
+                                {{dispCity}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Post Code</mat-label>
+                        <input type="text" name="postCode" formControlName="postCode" matInput>
                     </mat-form-field>
                 </div>
 
@@ -160,8 +178,7 @@
             </form>
             <span class="buttoncontainer">
                 <button mat-raised-button matStepperPrevious type="button" id="back">Back</button>
-                <button mat-raised-button (click)="submit();" color="accent"
-                    id="forward">Submit</button>
+                <button mat-raised-button (click)="submit();" color="accent" id="forward">Submit</button>
             </span>
         </mat-step>
 

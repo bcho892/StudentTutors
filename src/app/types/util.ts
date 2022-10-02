@@ -32,3 +32,4 @@ export type ResourceItem = {
     link: string;
 }
 
+export const cities: string[] = ["Auckland", "Wellington", "Christchurch", "Hamilton", "Tauranga", "Napier-Hastings", "Dunedin", "Palmeston North", "Nelson", "Rotorua", "Whangārei", "New Plymouth", "Invercargill", "Whanganui", "Gisbourne"]

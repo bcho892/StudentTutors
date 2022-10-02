@@ -34,6 +34,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PrivacypolicyComponent } from './pages/privacypolicy/privacypolicy.component';
 import { TermsandconditionsComponent } from './pages/termsandconditions/termsandconditions.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { TermsandconditionsComponent } from './pages/termsandconditions/termsand
     MatCheckboxModule,
     MatProgressSpinnerModule,
     MatDividerModule,
+    MatSelectModule,
     ReactiveFormsModule,
     MatStepperModule,
     FacebookModule.forRoot()
