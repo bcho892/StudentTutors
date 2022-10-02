@@ -3,7 +3,7 @@ import { Image } from "./schemas";
 export type ProcessStep = {
     step: number,
     name: string,
-    image: Image,
+    icon: Image,
     description: string
 }
 

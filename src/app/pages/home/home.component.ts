@@ -11,9 +11,9 @@ export class HomeComponent implements OnInit {
   content!: Homepage;
   subjects!: DisplaySubject[];
   process: ProcessStep[] = [
-    { step: 1, image: { asset: { _ref: "" } }, name: "Choose a Subject", description: "" },
-    { step: 3, image: { asset: { _ref: "" } }, name: "Make a Booking", description: "" },
-    { step: 2, image: { asset: { _ref: "" } }, name: "Find a Tutor", description: "" },
+    { step: 1, icon: { asset: { _ref: "" } }, name: "Choose a Subject", description: "" },
+    { step: 3, icon: { asset: { _ref: "" } }, name: "Make a Booking", description: "" },
+    { step: 2, icon: { asset: { _ref: "" } }, name: "Find a Tutor", description: "" },
   ]
 
   constructor(private pageService: PagesService) {
