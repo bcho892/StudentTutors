@@ -6,6 +6,10 @@
     white-space: nowrap;
 }
 
+mat-divider {
+    width: 100%;
+}
+
 .contentcontainer {
 
     overflow: hidden;
@@ -29,9 +33,20 @@
 }
 
 .details {
+    font-size: 15px;
     display: flex;
     align-items: center;
     gap: .7rem;
+    padding-bottom: 1rem;
+
+}
+
+a {}
+
+.details p {
+    font-size: 15px;
+    margin: 0;
+
 }
 
 .content {
@@ -47,9 +62,6 @@ h2 {
     margin: 0;
 }
 
-h6 {
-    font-size: 1rem;
-}
 
 
 ul {
@@ -59,6 +71,7 @@ ul {
     list-style: none;
     gap: 2rem;
 }
+
 
 p {
     font-size: 1rem;
@@ -125,7 +138,7 @@ a {
 @media only screen and (max-width: 600px) {
     .details {
         flex-direction: column;
-        gap: 0.2rem;
+        gap: 4px;
     }
 
     .details * {

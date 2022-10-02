@@ -32,6 +32,8 @@ import { BookformComponent } from './components/bookform/bookform.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { PrivacypolicyComponent } from './pages/privacypolicy/privacypolicy.component';
+import { TermsandconditionsComponent } from './pages/termsandconditions/termsandconditions.component';
 
 
 @NgModule({
@@ -53,6 +55,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     SubjectbadgeComponent,
     SubjecticonComponent,
     BookformComponent,
+    PrivacypolicyComponent,
+    TermsandconditionsComponent,
   ],
   imports: [
     BrowserModule,
