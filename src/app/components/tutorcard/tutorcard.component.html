@@ -3,11 +3,18 @@
         <img mat-card-avatar src="{{imageUrl(image)}}" alt="{{image}}">
         <div class="text">
             <h1>{{name}}</h1>
+            <mat-divider></mat-divider>
             <p *ngIf="description !== ''">{{formatDescription(description)}}</p>
+            <mat-divider></mat-divider>
+          
             <span class="subjects">
+                <span class="decoration">
+                    <h1>Subjects</h1>
+                </span>
                 <app-subjectbadge *ngFor="let subject of subjects" subject="{{subject.name}}" color="{{subject.color}}">
                 </app-subjectbadge>
             </span>
+            <mat-divider></mat-divider>
         </div>
     </span>
 </mat-card>
