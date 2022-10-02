@@ -8,7 +8,7 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 })
 export class ContactformComponent implements OnInit {
   submitted: boolean = false;
-
+  submitting: boolean = false;
   contactForm = this.formBuilder.group({
     name: new FormControl('', [
       Validators.required,
@@ -36,7 +36,8 @@ export class ContactformComponent implements OnInit {
   }
 
   async onSubmit(): Promise<void> {
-    if (!this.contactForm.valid) return;
+    if (!this.contactForm.valid || this.submitting) return;
+    this.submitting = true;
     const data = new FormData()
     data.append("name", this.contactForm.value.name!)
     data.append("email", this.contactForm.value.email!)
@@ -53,12 +54,15 @@ export class ContactformComponent implements OnInit {
       )
       if (submitResponse.ok) {
         this.contactForm.reset();
+        this.submitting = false;
         this.submitted = true;
       } else {
+        this.submitting = false;
         this.submitted = false;
         console.warn("Something went wrong");
       }
     } catch {
+      this.submitting = false;
       this.submitted = false;
       console.warn("An error was caught in the operation");
     }
