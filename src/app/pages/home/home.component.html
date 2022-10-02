@@ -52,7 +52,7 @@
         <h1>Our Process</h1>
         <span class="processcards">
             <app-processcard *ngFor="let process of process" [step]="process.step" [name]="process.name"
-                [description]="process.description" image="">
+                [description]="process.description" image="{{getUrl(process.image)}}">
             </app-processcard>
         </span>
         <p>Want some changes to make this work for you? Feel free to <a routerLink="/Contact">contact us</a> to discuss!

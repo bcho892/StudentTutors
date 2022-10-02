@@ -1,5 +1,4 @@
 .head {
-
     width: 5rem;
     height: 2rem;
     position: absolute;
@@ -14,9 +13,28 @@ h2 {
     font-weight: 300;
 }
 
+.circle {
+    display: flex;
+    position: relative;
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.circle img {
+    
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
 
 .mat-card-content {
     padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
 }
 
 .mat-card {

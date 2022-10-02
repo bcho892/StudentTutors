@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
     this.subjects = this.pageService.getSubjects();
     if (this.content.sectionthree) this.process = this.content.sectionthree.steps;
     this.process.sort((a, b) => a.step - b.step);
-    //console.log(this.subjects);
+    console.log(this.content.sectionthree);
   }
   public getUrl(source: Image) {
     return source && source.asset ? this.pageService.buildImageUrl(source.asset._ref) : "./assets/photo.png";
