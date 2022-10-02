@@ -1,10 +1,14 @@
 .container{
+    position: relative;
+    z-index: 1;
     display: flex;
     height:2rem;
     align-items: center;
     justify-content: center;
     width: 5rem;
     border-radius: 7px;
+    background: white;
+    box-shadow: 1px 1px 5px var(--black);
 }
 
 p{
