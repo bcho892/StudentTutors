@@ -12,7 +12,9 @@ export class BookComponent implements OnInit {
   constructor(private pageService: PagesService) {
     this.content = this.pageService.getBookpage();
   }
-
+  format(text: string): string {
+    return this.pageService.format(text);
+  }
   ngOnInit(): void {
     window.scrollTo(0, 0);
   }
