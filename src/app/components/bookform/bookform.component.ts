@@ -17,6 +17,7 @@ export class BookformComponent implements OnInit {
   cities: string[] = cities;
   submitting: boolean = false;
   submitted: boolean = false;
+  invalid: boolean = false;
   days: string[] = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
   stepperOrientation: Observable<StepperOrientation>;
   bookForm: FormGroup;
@@ -118,7 +119,10 @@ export class BookformComponent implements OnInit {
     }
   }
   async submit(): Promise<void> {
-    if (!this.bookForm.valid) return;
+    if (!this.bookForm.valid) {
+      this.invalid = true;
+      return;
+    }
     this.submitting = true;
     let currentDate = new Date();
     this.bookForm.value.availability = this.bookForm.value.availability.toString();
@@ -135,14 +139,17 @@ export class BookformComponent implements OnInit {
         console.log("Submitted");
         this.bookForm.reset();
         this.stepper.reset();
+        this.invalid = false;
         this.submitting = false;
         this.submitted = true;
       } else {
         console.log("rejected");
+        this.invalid = true;
         this.submitting = false;
         return;
       }
     } catch {
+      this.invalid = true;
       this.submitting = false;
       console.error("Something went wrong");
       return;

@@ -12,10 +12,10 @@
     text-align: center;
     color: white;
     font-weight: 300;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .submitting {
@@ -75,4 +75,10 @@ form {
 
 mat-form-field {
     flex: 1;
+}
+
+#error {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    color: red;
 }
