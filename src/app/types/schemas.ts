@@ -48,6 +48,7 @@ export type Homepage = {
 
 export type Aboutpage = {
     abouttext: string,
+    aboutimage: Image,
     goalsdescription: string,
     sectionpromoter: {
         heading: string,

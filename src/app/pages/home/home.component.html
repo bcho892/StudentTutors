@@ -5,13 +5,13 @@
         <h1>{{content.landingtext}}</h1>
     </span>
 </div>
-<div class="section grey">
+<div class="section blue">
     <div class="contentcontainer" id="intro">
         <div class="splitcontainer">
             <div class="section1">
                 <h1>{{content.sectionone.heading}}</h1>
                 <p>{{format(content.sectionone.firsthalf.body)}}</p>
-                <app-arrowbutton [text]="'See More'" [toPage]="'/About'" [blue]="false"></app-arrowbutton>
+                <app-arrowbutton [text]="'See More'" [toPage]="'/About'" [blue]="true"></app-arrowbutton>
 
             </div>
             <div class="section2">
@@ -29,24 +29,7 @@
         </div>
     </div>
 </div>
-<div class="section blue">
-    <div class="contentcontainer" id="goal">
-        <h1>{{content.sectiontwo.heading}}</h1>
-        <mat-card>
-            <div class="splitcontainer">
-                <div class="section1">
-                    <mat-card id="goalcard">
-                        <img mat-card-image src="{{getUrl(content.sectiontwo.firsthalf.image)}}">
-                    </mat-card>
-                </div>
-                <div class="section2">
-                    <h2>{{content.sectiontwo.secondhalf.title}}</h2>
-                    <p>{{format(content.sectiontwo.secondhalf.body)}}</p>
-                </div>
-            </div>
-        </mat-card>
-    </div>
-</div>
+
 <div class="section grey">
     <div class="contentcontainer" id="process">
         <h1>Our Process</h1>
