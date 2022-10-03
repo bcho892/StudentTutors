@@ -24,8 +24,26 @@
                     <div class="formcontainer">
                         <mat-form-field color="accent" appearance="fill">
                             <mat-label>What subjects would you like to take? (Currently all $50/hr)</mat-label>
-                            <input formControlName="subjects" name="subject" type="text" matInput>
+
+                            <mat-chip-list #courseChips>
+                                <mat-chip (removed)="remove(chip)" *ngFor="let chip of bookForm.value.subjects">
+                                    {{chip}}
+                                    <button matChipRemove>
+                                        <mat-icon>cancel</mat-icon>
+                                    </button>
+
+                                </mat-chip>
+                                <input [matChipInputFor]="courseChips" [formControl]="subjectControl"
+                                    [matAutocomplete]="auto" name="subject"
+                                    type="text">
+                            </mat-chip-list>
                         </mat-form-field>
+                        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                            <mat-option *ngFor="let course of courses" [value]="course.code">
+                                {{course.code}} - {{course.subject}} Level {{course.NCEALevel}}
+                            </mat-option>
+                        </mat-autocomplete>
+
                     </div>
                     <div class="formcontainer">
                         <p>Let us know your avaliablility (Tick the times you are free).</p>

@@ -5,7 +5,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
-import { cities } from 'src/app/types/util';
+import { cities, courses } from 'src/app/types/util';
+import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 @Component({
   selector: 'app-bookform',
   templateUrl: './bookform.component.html',
@@ -15,17 +16,20 @@ export class BookformComponent implements OnInit {
 
   @ViewChild('stepper') stepper: any;
   cities: string[] = cities;
+  courses = courses;
   submitting: boolean = false;
   submitted: boolean = false;
   invalid: boolean = false;
+  currentChips: string[] = [];
   days: string[] = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
   stepperOrientation: Observable<StepperOrientation>;
   bookForm: FormGroup;
-
+  subjectControl = new FormControl('');
   constructor(private breakpointObserver: BreakpointObserver, private formBuilder: FormBuilder) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 850px)')
       .pipe(map(({ matches }) => (matches ? 'horizontal' : 'vertical')));
+
 
     this.bookForm = this.formBuilder.group({
       schoolName: new FormControl('',
@@ -35,7 +39,7 @@ export class BookformComponent implements OnInit {
         Validators.min(1),
         Validators.max(13)
       ]),
-      subjects: new FormControl('', [
+      subjects: new FormArray([], [
         Validators.required
       ]),
       availability: new FormArray([],
@@ -86,6 +90,7 @@ export class BookformComponent implements OnInit {
         Validators.requiredTrue
       ])
     })
+
   }
 
   onAvaliabilityChange(event: any) {
@@ -97,6 +102,15 @@ export class BookformComponent implements OnInit {
       const index = selectedTimes.controls.findIndex(item => item.value === timeSlot);
       selectedTimes.removeAt(index);
     }
+  }
+  selected(event: MatAutocompleteSelectedEvent) {
+    const subjects = (this.bookForm.controls['subjects'] as FormArray);
+    subjects.push(new FormControl(event.option.value));
+  }
+  remove(toRemove: string) {
+    const subjects = (this.bookForm.controls['subjects'] as FormArray);
+    const index = subjects.controls.findIndex(item => item.value === toRemove);
+    subjects.removeAt(index);
   }
 
   formatDate(abbreviation: string): string {
@@ -119,6 +133,8 @@ export class BookformComponent implements OnInit {
         return "Error";
     }
   }
+
+
   async submit(): Promise<void> {
     if (!this.bookForm.valid) {
       this.invalid = true;
@@ -127,6 +143,7 @@ export class BookformComponent implements OnInit {
     this.submitting = true;
     let currentDate = new Date();
     this.bookForm.value.availability = this.bookForm.value.availability.toString();
+    this.bookForm.value.subjects = this.bookForm.value.subjects.toString();
     this.bookForm.value.submittedDate = currentDate.toString();
     const data = JSON.stringify(this.bookForm.value);
     try {

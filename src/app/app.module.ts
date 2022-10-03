@@ -35,6 +35,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PrivacypolicyComponent } from './pages/privacypolicy/privacypolicy.component';
 import { TermsandconditionsComponent } from './pages/termsandconditions/termsandconditions.component';
 import { MatSelectModule } from '@angular/material/select';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 
 @NgModule({
@@ -71,6 +73,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatInputModule,
     MatCheckboxModule,
     MatProgressSpinnerModule,
+    MatChipsModule,
+    MatAutocompleteModule,
     MatDividerModule,
     MatSelectModule,
     ReactiveFormsModule,
