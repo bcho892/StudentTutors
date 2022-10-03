@@ -15,6 +15,7 @@ export class PagesService {
   private tutorpage!: Tutorpage;
   private resourcepage!: Resourcepage;
   private bookpage!: Bookpage;
+  private booksubjects!: string[];
   private tutors!: Tutor[];
   private goals!: Goal[];
   private resources!: Resource[];

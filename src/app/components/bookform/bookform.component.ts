@@ -21,6 +21,7 @@ export class BookformComponent implements OnInit {
   days: string[] = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
   stepperOrientation: Observable<StepperOrientation>;
   bookForm: FormGroup;
+
   constructor(private breakpointObserver: BreakpointObserver, private formBuilder: FormBuilder) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 850px)')
@@ -129,7 +130,7 @@ export class BookformComponent implements OnInit {
     this.bookForm.value.submittedDate = currentDate.toString();
     const data = JSON.stringify(this.bookForm.value);
     try {
-      const response = await fetch(`https://api.apispreadsheets.com/data/${environment.form_key}`,
+      const response = await fetch(`https://api.apispreadsheets.com/data/${environment.form_key_booking}`,
         {
           method: 'POST',
           body: data,
