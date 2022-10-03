@@ -104,7 +104,10 @@ export class BookformComponent implements OnInit {
     }
   }
   selected(event: MatAutocompleteSelectedEvent) {
+    const toAdd = event.option.value;
     const subjects = (this.bookForm.controls['subjects'] as FormArray);
+    const index = subjects.controls.findIndex(item => item.value === toAdd);
+    if (index !== -1) return;
     subjects.push(new FormControl(event.option.value));
   }
   remove(toRemove: string) {
