@@ -23,17 +23,22 @@
 </div>
 <div class="section grey">
     <div class="contentcontainer" id="tonext">
-        <img src="./assets/gyang2.jpg" alt="">
-
-        <mat-card>
-            <h1>{{content.sectionpromoter.heading}}</h1>
-            <p>{{format(content.sectionpromoter.body)}}</p>
-            <div class="bottomsection">
-                <h2>{{content.sectionpromoter.name}}</h2>
-                <h3>{{format(content.sectionpromoter.credidentials)}}</h3>
+        <div class="splitcontainer">
+            <div class="section1">
+                <img src="./assets/gyang2.jpg" alt="">
+                <div id="bluecircle"></div>
             </div>
-        </mat-card>
-
+            <div class="section2">
+                <mat-card>
+                    <h1>{{content.sectionpromoter.heading}}</h1>
+                    <p>{{format(content.sectionpromoter.body)}}</p>
+                    <div class="bottomsection">
+                        <h2>{{content.sectionpromoter.name}}</h2>
+                        <h3>{{format(content.sectionpromoter.credidentials)}}</h3>
+                    </div>
+                </mat-card>
+            </div>
+        </div>
     </div>
 </div>
 <app-footer></app-footer>
