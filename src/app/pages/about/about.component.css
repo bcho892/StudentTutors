@@ -42,7 +42,8 @@
     gap: 2rem;
 }
 
-#tonext mat-card {
+#tonext .section2 mat-card {
+    padding: 2rem;
     display: flex;
     flex-direction: column;
 }
@@ -52,18 +53,18 @@
 }
 
 #tonext .bottomsection h2 {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: 400;
     margin-bottom: 0;
 }
 
 #tonext p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 300;
 }
 
 #tonext .bottomsection h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 300;
     margin-bottom: 0;
 }
@@ -118,7 +119,7 @@
         padding-bottom: 10px;
     }
 
-    #tonext .section2{
+    #tonext .section2 {
         align-self: flex-end;
         justify-self: flex-end;
     }
