@@ -18,12 +18,10 @@
                 <mat-card id="aboutcard">
                     <mat-card-title>{{content.sectionone.secondhalf.heading}}</mat-card-title>
                     <mat-card-subtitle>{{content.sectionone.firsthalf.secondaryheading}}</mat-card-subtitle>
-                    <mat-card-content>
                         <div id="subjectgrid">
                             <app-subjecticon *ngFor="let subject of subjects" name="{{subject.name}}"
                                 image="{{getUrl(subject.image)}}"></app-subjecticon>
                         </div>
-                    </mat-card-content>
                 </mat-card>
             </div>
         </div>

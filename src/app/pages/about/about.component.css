@@ -1,5 +1,5 @@
 #maincard mat-card {
-    padding-bottom: 0;
+    padding: 2rem;    
 }
 
 #maincard .section2 {
@@ -7,6 +7,8 @@
     flex-direction: column;
     justify-content: center;
 }
+
+
 
 #goals {
     gap: 1rem;
@@ -18,6 +20,10 @@
     row-gap: 1rem;
     grid-template-columns: 1fr 1fr;
     width: 100%;
+}
+
+.goaldiv mat-card{
+    padding: 2rem;
 }
 
 #tonext h1 {

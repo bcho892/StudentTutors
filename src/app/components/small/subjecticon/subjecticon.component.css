@@ -1,5 +1,9 @@
 .container {
+    height: 110px;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
     text-align: center;
     overflow: hidden;

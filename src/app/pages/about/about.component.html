@@ -1,26 +1,18 @@
 <app-navbar></app-navbar>
 <div class="section grey" id="header">
     <div class="contentcontainer" id="maincard">
-        <div class="splitcontainer">
-            <div class="section1">
-                <mat-card>
-                    <img mat-card-image src="{{getUrl(content.aboutimage)}}" style="object-fit: cover;">
-                </mat-card>
-            </div>
-            <div class="section2">
+        <div class="section2">
+            <mat-card>
                 <h1>About Us</h1>
                 <p>{{format(content.abouttext)}}</p>
-            </div>
+            </mat-card>
         </div>
     </div>
 </div>
 
 <div class="section blue">
     <div class="contentcontainer" id="goals">
-        <mat-card>
-            <h1>Our Main Goals</h1>
-            <p>{{format(content.goalsdescription)}}</p>
-        </mat-card>
+        <h1>Our Values</h1>
         <div class="goaldiv">
             <mat-card *ngFor="let goal of goals">
                 <h2>{{goal.name}}</h2>
