@@ -5,12 +5,3 @@
     gap: 1rem;
 }
 
-mat-expansion-panel-header{
-    height:6rem;
-}
-
-mat-panel-title{
-    height: 4rem;
-    font-weight: 300;
-    font-size: 2rem;
-}
