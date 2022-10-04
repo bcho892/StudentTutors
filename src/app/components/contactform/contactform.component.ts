@@ -8,7 +8,7 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 })
 export class ContactformComponent implements OnInit {
   submitted: boolean = false;
-  submitting: boolean = false;
+  submitting: boolean = true;
   contactForm = this.formBuilder.group({
     name: new FormControl('', [
       Validators.required,

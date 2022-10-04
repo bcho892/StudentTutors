@@ -1,4 +1,5 @@
-<mat-card>
+<mat-card [ngClass]="{'submitting': submitting}">
+    <mat-spinner color="accent" id="spinner" *ngIf="submitting"></mat-spinner>
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" *ngIf="!submitted else sent">
         <mat-form-field appearance="fill" color="accent">
             <mat-label>Name</mat-label>
