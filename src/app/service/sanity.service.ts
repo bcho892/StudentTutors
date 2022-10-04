@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import SanityClient from '@sanity/client';
 import ImageUrlBuilder from '@sanity/image-url';
 import { environment } from 'src/environments/environment';
-import { DisplaySubject, Goal, Pages, Resource } from '../types/schemas';
+import { DisplaySubject, Goal, Pages, Question, Resource } from '../types/schemas';
 import { Tutor } from '../types/util';
 @Injectable({
   providedIn: 'root'
@@ -50,6 +50,13 @@ export class SanityService {
       `*[_type == "displaysubject"]`
     )
   }
+
+  async getQuestions(): Promise<Question[]> {
+    return await this.sanityClientCredidentials.option.fetch(
+      `*[_type == "faq"]`
+    )
+  }
+
   async getGoals(): Promise<Goal[]> {
     return await this.sanityClientCredidentials.option.fetch(
       `*[_type == "goal"]`

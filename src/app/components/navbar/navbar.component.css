@@ -74,6 +74,19 @@
     color: white;
 }
 
+#about:hover #options {
+    display: block;
+}
+
+#options {
+    padding: 0 1rem;
+    width: 5rem;
+    background-color: white;
+    display: none;
+    position: absolute;
+    box-shadow: 1px 1px 20px var(--black);
+}
+
 @media only screen and (max-width: 830px) {
     .container {
         justify-content: space-between;

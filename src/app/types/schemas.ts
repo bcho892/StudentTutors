@@ -106,3 +106,8 @@ export type DisplaySubject = {
     name: string,
     image: Image,
 }
+
+export type Question = {
+    question: string,
+    answer: string,
+}

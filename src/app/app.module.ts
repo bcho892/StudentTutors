@@ -37,6 +37,8 @@ import { TermsandconditionsComponent } from './pages/termsandconditions/termsand
 import { MatSelectModule } from '@angular/material/select';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { FaqComponent } from './pages/faq/faq.component';
 
 
 @NgModule({
@@ -60,6 +62,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     BookformComponent,
     PrivacypolicyComponent,
     TermsandconditionsComponent,
+    FaqComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +80,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
     MatAutocompleteModule,
     MatDividerModule,
     MatSelectModule,
+    MatExpansionModule,
     ReactiveFormsModule,
     MatStepperModule,
     FacebookModule.forRoot()

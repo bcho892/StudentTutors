@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { BookComponent } from './pages/book/book.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { FaqComponent } from './pages/faq/faq.component';
 import { HomeComponent } from './pages/home/home.component'
 import { PrivacypolicyComponent } from './pages/privacypolicy/privacypolicy.component';
 import { ResourcesComponent } from './pages/resources/resources.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'Tutors', component: TutorsComponent },
   { path: 'Resources', component: ResourcesComponent },
   { path: 'PrivacyPolicy', component: PrivacypolicyComponent },
-  { path: 'TCs', component: TermsandconditionsComponent }
+  { path: 'TCs', component: TermsandconditionsComponent },
+  { path: 'FAQ', component: FaqComponent }
 ];
 
 @NgModule({

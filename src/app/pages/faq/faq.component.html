@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div class="section blue" id="header">
+    <div class="contentcontainer">
+        <h1>Frequently Asked Questions</h1>
+        <mat-expansion-panel *ngFor="let faq of faqs">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{faq.question}}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p>{{format(faq.answer)}}</p>
+        </mat-expansion-panel>
+    </div>
+</div>
+
+
+<app-footer></app-footer>
