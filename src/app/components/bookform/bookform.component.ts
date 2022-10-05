@@ -72,6 +72,7 @@ export class BookformComponent implements OnInit {
         Validators.minLength(4),
         Validators.pattern('^[0-9]*$')
       ]),
+      goals: new FormControl(''),
       parentFirstName: new FormControl(''),
       parentLastName: new FormControl(''),
       parentMiddleName: new FormControl(''),

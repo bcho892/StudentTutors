@@ -34,8 +34,7 @@
 
                                 </mat-chip>
                                 <input [matChipInputFor]="courseChips" [formControl]="subjectControl"
-                                    [matAutocomplete]="auto" name="subject"
-                                    type="text">
+                                    [matAutocomplete]="auto" name="subject" type="text">
                             </mat-chip-list>
                         </mat-form-field>
                         <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
@@ -138,7 +137,13 @@
                         <input type="text" name="postCode" formControlName="postCode" matInput>
                     </mat-form-field>
                 </div>
-
+                <div class="formcontainer">
+                    <mat-form-field color="accent" appearance="fill">
+                        <mat-label>Let us know your goals/what you want to achieve.
+                        </mat-label>
+                        <textarea type="text" name="goals" formControlName="goals" matInput></textarea>
+                    </mat-form-field>
+                </div>
             </form>
             <span class="buttoncontainer">
                 <button mat-raised-button type="button" matStepperPrevious id="back">Back</button>
