@@ -23,7 +23,7 @@
                     </div>
                     <div class="formcontainer">
                         <mat-form-field color="accent" appearance="fill">
-                            <mat-label>What subjects would you like to take? (Currently all $50/hr)</mat-label>
+                            <mat-label>What subjects would you like to take?</mat-label>
 
                             <mat-chip-list #courseChips>
                                 <mat-chip (removed)="remove(chip)" *ngFor="let chip of bookForm.value.subjects">
