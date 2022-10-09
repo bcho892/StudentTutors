@@ -52,13 +52,28 @@
     padding: 1rem 0;
     width: 100%;
     display: grid;
-    row-gap: 0.75rem;
-    grid-template-columns: 30% 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+}
+
+.calender .mat-form-field-wrapper{
+    padding-bottom: .5em;
 }
 
 .buttoncontainer {
     width: 100%;
     display: flex;
+}
+
+#timeselect {
+    display: grid;
+    align-items: center;
+    width: 100%;
+    grid-template-columns: 1fr;
+}
+
+#timeinput {
+    display: flex;
+    width: 100%;
 }
 
 #forward {

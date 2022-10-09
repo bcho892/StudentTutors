@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
-import { cities, courses } from 'src/app/types/util';
+import { cities, courses, times } from 'src/app/types/util';
 import { MatAutocompleteSelectedEvent } from '@angular/material/autocomplete';
 @Component({
   selector: 'app-bookform',
@@ -17,6 +17,7 @@ export class BookformComponent implements OnInit {
   @ViewChild('stepper') stepper: any;
   cities: string[] = cities;
   courses = courses;
+  times = times;
   submitting: boolean = false;
   submitted: boolean = false;
   invalid: boolean = false;
@@ -25,6 +26,8 @@ export class BookformComponent implements OnInit {
   stepperOrientation: Observable<StepperOrientation>;
   bookForm: FormGroup;
   subjectControl = new FormControl('');
+  timeControl = new FormControl('');
+
   constructor(private breakpointObserver: BreakpointObserver, private formBuilder: FormBuilder) {
     this.stepperOrientation = breakpointObserver
       .observe('(min-width: 850px)')
@@ -42,8 +45,8 @@ export class BookformComponent implements OnInit {
       subjects: new FormArray([], [
         Validators.required
       ]),
-      availability: new FormArray([],
-        Validators.required),
+      availability: new FormArray([], [
+        Validators.required]),
       firstName: new FormControl('', [
         Validators.required
       ]),
@@ -94,27 +97,32 @@ export class BookformComponent implements OnInit {
 
   }
 
-  onAvaliabilityChange(event: any) {
-    const selectedTimes = (this.bookForm.controls['availability'] as FormArray);
-    const timeSlot = event.source.value;
-    if (event.checked) {
-      selectedTimes.push(new FormControl(timeSlot));
-    } else {
-      const index = selectedTimes.controls.findIndex(item => item.value === timeSlot);
-      selectedTimes.removeAt(index);
-    }
-  }
-  selected(event: MatAutocompleteSelectedEvent) {
+  subjectSelected(event: MatAutocompleteSelectedEvent) {
     const toAdd = event.option.value;
     const subjects = (this.bookForm.controls['subjects'] as FormArray);
     const index = subjects.controls.findIndex(item => item.value === toAdd);
     if (index !== -1) return;
     subjects.push(new FormControl(event.option.value));
   }
-  remove(toRemove: string) {
+
+  timeSelected(event: MatAutocompleteSelectedEvent) {
+    const toAdd = event.option.value;
+    const times = (this.bookForm.controls['availability'] as FormArray);
+    const index = times.controls.findIndex(item => item.value === toAdd);
+    if (index !== -1) return;
+    times.push(new FormControl(event.option.value));
+  }
+
+  removeSubject(toRemove: string) {
     const subjects = (this.bookForm.controls['subjects'] as FormArray);
     const index = subjects.controls.findIndex(item => item.value === toRemove);
     subjects.removeAt(index);
+  }
+
+  removeTime(toRemove: string) {
+    const times = (this.bookForm.controls['availability'] as FormArray);
+    const index = times.controls.findIndex(item => item.value === toRemove);
+    times.removeAt(index);
   }
 
   formatDate(abbreviation: string): string {

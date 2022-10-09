@@ -26,7 +26,7 @@
                             <mat-label>What subjects would you like to take?</mat-label>
 
                             <mat-chip-list #courseChips>
-                                <mat-chip (removed)="remove(chip)" *ngFor="let chip of bookForm.value.subjects">
+                                <mat-chip (removed)="removeSubject(chip)" *ngFor="let chip of bookForm.value.subjects">
                                     {{chip}}
                                     <button matChipRemove>
                                         <mat-icon>cancel</mat-icon>
@@ -37,7 +37,7 @@
                                     [matAutocomplete]="auto" name="subject" type="text">
                             </mat-chip-list>
                         </mat-form-field>
-                        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="subjectSelected($event)">
                             <mat-option *ngFor="let course of courses" [value]="course.code">
                                 {{course.code}} - {{course.subject}} Level {{course.NCEALevel}}
                             </mat-option>
@@ -50,25 +50,29 @@
                     <mat-divider></mat-divider>
                     <div class="formcontainer">
                         <div class="calender">
-                            <div class=""><strong>Teaching Schedule</strong></div>
-                            <div *ngFor="let day of days">{{day}}</div>
-                            <div>Morning</div>
-                            <div *ngFor="let day of days">
-                                <mat-checkbox (change)="onAvaliabilityChange($event)"
-                                    [value]="formatDate(day) + ' Morning'">
-                                </mat-checkbox>
-                            </div>
-                            <div>Afternoon</div>
-                            <div *ngFor="let day of days">
-                                <mat-checkbox (change)="onAvaliabilityChange($event)"
-                                    [value]="formatDate(day) + ' Afternoon'">
-                                </mat-checkbox>
-                            </div>
-                            <div>Evening</div>
-                            <div *ngFor="let day of days">
-                                <mat-checkbox (change)="onAvaliabilityChange($event)"
-                                    [value]="formatDate(day) + ' Evening'">
-                                </mat-checkbox>
+                            <div id="timeselect" *ngFor="let day of days">
+                                <div class="formcontainer">
+                                    <mat-form-field appearance="fill" color="accent">
+                                        <mat-label>{{formatDate(day)}}</mat-label>
+                                        <mat-chip-list #timeChips>
+                                            <ng-container *ngFor="let chip of bookForm.value.availability">
+                                                <mat-chip *ngIf="chip.startsWith(day)" (removed)="removeTime(chip)">
+                                                    {{chip.replace(formatDate(day) + " ", "")}}
+                                                    <button matChipRemove>
+                                                        <mat-icon>cancel</mat-icon>
+                                                    </button>
+                                                </mat-chip>
+                                            </ng-container>
+                                            <input id="timeinput" type="text" [matChipInputFor]="timeChips"
+                                                [formControl]="timeControl" [matAutocomplete]="auto" matInput>
+                                        </mat-chip-list>
+                                    </mat-form-field>
+                                    <mat-autocomplete #auto="matAutocomplete" (optionSelected)="timeSelected($event)">
+                                        <mat-option *ngFor="let time of times" value="{{formatDate(day)}} {{time}}">
+                                            {{time}}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                                </div>
                             </div>
                         </div>
                     </div>
