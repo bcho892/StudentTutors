@@ -33,7 +33,6 @@ export class BookformComponent implements OnInit {
       .observe('(min-width: 850px)')
       .pipe(map(({ matches }) => (matches ? 'horizontal' : 'vertical')));
 
-
     this.bookForm = this.formBuilder.group({
       schoolName: new FormControl('',
         Validators.required),
